@@ -57,7 +57,7 @@
 /// Define if nesting interrupt is active
 #define NESTING_INT 1
 
-#define TASK_WITH_PARAMETERS 1
+#define TASK_WITH_PARAMETERS 0
 
 /// Define if its necessary to save status register / interrupt info
 #if NESTING_INT == 1

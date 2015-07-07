@@ -84,9 +84,9 @@ void OSRTCSetup(void)
   /* ### Init_RTC init code */
   /* RTCMOD: RTCMOD=0x63 */
   // Cristal de Referência = 1Khz
-  RTCMOD = (configRTC_CRISTAL_HZ / configRTC_PRE_SCALER);
+  ///RTCMOD = (configRTC_CRISTAL_HZ / configRTC_PRE_SCALER);
   /* RTCSC: RTIF=1,RTCLKS=0,RTIE=1,RTCPS=0x0B */
-  RTCSC = 0x1B;                                      
+  //RTCSC = 0x1B;                                      
   /* ### */
 
   //OSResetTime(&Hora);
