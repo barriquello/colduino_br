@@ -179,7 +179,7 @@ typedef unsigned short uip_stats_t;
 /* Not part of C99 but actually present */
 int strcasecmp(const char*, const char*);
 
-#define AUTOSTART_ENABLE 	0
+#define AUTOSTART_ENABLE 	1
 
 
 #endif /* CONTIKI_CONF_H_ */

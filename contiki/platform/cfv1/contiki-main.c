@@ -84,7 +84,7 @@ void contiki_main(void)
 {
 
   //main_win();
-  main_minimal_net();
+  //main_minimal_net();
 
   for(;;)
   {
