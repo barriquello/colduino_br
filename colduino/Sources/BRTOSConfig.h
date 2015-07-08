@@ -46,10 +46,10 @@
 #endif
 
 /// Define if TimerHook function is active
-#define TIMER_HOOK_EN 1
+#define TIMER_HOOK_EN 	1
 
 /// Define if IdleHook function is active
-#define IDLE_HOOK_EN 0
+#define IDLE_HOOK_EN 	0
 
 /// Enable or disable semaphore controls
 #define BRTOS_SEM_EN           1

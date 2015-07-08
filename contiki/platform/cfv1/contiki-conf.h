@@ -26,46 +26,61 @@ char* strdup(const char*);
 #include "sys/log.h"
 CCIF void debug_printf(char *format, ...);
 
-
-#define CLOCK_CONF_SECOND 1000
 typedef unsigned long long clock_time_t;
+#define CLOCK_CONF_SECOND 	1000
+#define INFINITE_TIME 	 	ULONG_MAX
+
 
 #if 0
-typedef INT8S    int8_t;
+typedef INT8S   int8_t;
 typedef INT8U   uint8_t;
 typedef INT16S  int16_t;
-typedef INT16U uint16_t;
-typedef INT32S    int32_t;
-typedef INT32U   uint32_t;
+typedef INT16U 	uint16_t;
+typedef INT32S  int32_t;
+typedef INT32U  uint32_t;
 #endif
 #include "stdint.h"
 
 /* These names are deprecated, use C99 names. */
-typedef unsigned char   u8_t;
-typedef unsigned short u16_t;
-typedef          long  s32_t;
+typedef INT8U   u8_t;
+typedef INT16U  u16_t;
+typedef INT32S  s32_t;
 
 typedef unsigned short uip_stats_t;
 
-#define NETSTACK_CONF_WITH_IPV6		 1
+#define NETSTACK_CONF_WITH_IPV6		  1
 
-#define UIP_CONF_LLH_LEN             14
-#define UIP_CONF_BUFFER_SIZE         1514
-#define UIP_CONF_TCP_SPLIT           1
-#define UIP_CONF_LOGGING             0
-#define UIP_CONF_UDP_CHECKSUMS       1
+#define UIP_CONF_UDP                  1
+#define UIP_CONF_TCP                  1
+
+#define UIP_CONF_LLH_LEN              14
+#define UIP_CONF_MAX_LISTENPORTS      20
+#define UIP_CONF_MAX_CONNECTIONS      20
+#define UIP_CONF_BYTE_ORDER           UIP_LITTLE_ENDIAN
+
+#define UIP_CONF_BUFFER_SIZE          1514
+#define UIP_CONF_TCP_SPLIT            0
+#define UIP_CONF_LOGGING              0
+#define UIP_CONF_IP_FORWARD           0
+#define UIP_CONF_LOGGING              0
+#define UIP_CONF_UDP_CHECKSUMS        1
+
 #if NETSTACK_CONF_WITH_IPV6
-#define UIP_CONF_IP_FORWARD          0
-#define NBR_TABLE_CONF_MAX_NEIGHBORS 100
-#define UIP_CONF_DS6_DEFRT_NBU       2
-#define UIP_CONF_DS6_PREFIX_NBU      5
-#define UIP_CONF_MAX_ROUTES          100
-#define UIP_CONF_DS6_ADDR_NBU        10
-#define UIP_CONF_DS6_MADDR_NBU       0  //VC++ does not allow zero length arrays
-#define UIP_CONF_DS6_AADDR_NBU       0  //inside a struct
+#define UIP_CONF_IPV6_QUEUE_PKT       1
+#define UIP_CONF_IPV6_CHECKS          1
+#define UIP_CONF_IPV6_REASSEMBLY      1
+//#define UIP_CONF_NETIF_MAX_ADDRESSES  5
+#define NBR_TABLE_CONF_MAX_NEIGHBORS     20
+#define UIP_CONF_DS6_DEFRT_NBU   		2
+#define UIP_CONF_DS6_PREFIX_NBU  		5
+#define UIP_CONF_MAX_ROUTES   			100
+#define UIP_CONF_DS6_ADDR_NBU    		10
+#define UIP_CONF_DS6_MADDR_NBU   		0
+#define UIP_CONF_DS6_AADDR_NBU   		0
 #else
 #define UIP_CONF_IP_FORWARD          1
-#endif
+#endif /* NETSTACK_CONF_WITH_IPV6 */
+
 
 #define RESOLV_CONF_SUPPORTS_MDNS              0
 #define RESOLV_CONF_SUPPORTS_RECORD_EXPIRATION 0
@@ -157,39 +172,8 @@ typedef unsigned short uip_stats_t;
 
 #endif
 
-#define UIP_CONF_LLH_LEN              14
-#define UIP_CONF_MAX_LISTENPORTS      40
-#define UIP_CONF_MAX_CONNECTIONS      40
-#define UIP_CONF_BYTE_ORDER           UIP_LITTLE_ENDIAN
-#define UIP_CONF_TCP_SPLIT            0
-#define UIP_CONF_IP_FORWARD           0
-#define UIP_CONF_LOGGING              0
-#define UIP_CONF_UDP_CHECKSUMS        1
-
 /* Not used but avoids compile errors while sicslowpan.c is being developed */
 #define SICSLOWPAN_CONF_COMPRESSION       SICSLOWPAN_COMPRESSION_HC06
-
-#define UIP_CONF_UDP                  1
-#define UIP_CONF_TCP                  1
-
-#if NETSTACK_CONF_WITH_IPV6
-#define UIP_CONF_IPV6_QUEUE_PKT       1
-#define UIP_CONF_IPV6_CHECKS          1
-#define UIP_CONF_IPV6_REASSEMBLY      1
-//#define UIP_CONF_NETIF_MAX_ADDRESSES  5
-#define NBR_TABLE_CONF_MAX_NEIGHBORS     100
-#define UIP_CONF_DS6_DEFRT_NBU   2
-#define UIP_CONF_DS6_PREFIX_NBU  5
-#define UIP_CONF_MAX_ROUTES   100
-#define UIP_CONF_DS6_ADDR_NBU    10
-#define UIP_CONF_DS6_MADDR_NBU   0
-#define UIP_CONF_DS6_AADDR_NBU   0
-#endif /* NETSTACK_CONF_WITH_IPV6 */
-
-//typedef unsigned long long clock_time_t;
-#define CLOCK_CONF_SECOND 1000
-#define INFINITE_TIME ULONG_MAX
-
 #define LOG_CONF_ENABLED 	1
 
 /* Not part of C99 but actually present */

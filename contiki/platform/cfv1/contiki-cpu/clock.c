@@ -55,8 +55,6 @@ clock_time(void)
 unsigned long
 clock_seconds(void)
 {
-  unsigned long long clock;
-
   return (clock_time_t)(clock / configTICK_RATE_HZ);
 }
 /*-----------------------------------------------------------------------------------*/

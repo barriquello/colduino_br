@@ -59,6 +59,12 @@
 
 int main_win(void);
 int main_minimal_net(void);
+void contiki_main(void);
+
+/* for printf support */
+extern void InitializeUART(void);
+extern char ReadUARTN(void);
+extern void WriteUARTN(char c);
 
 #define fprintf(...)
 
@@ -470,8 +476,9 @@ main_minimal_net(void)
 #endif
 
     if(next_event > (CLOCK_SECOND * 2))
-      next_event = CLOCK_SECOND * 2;
+    	next_event = CLOCK_SECOND * 2;
 
+     DelayTask((INT16U)next_event);
 
 #if 0
     FD_ZERO(&fds);
@@ -503,13 +510,14 @@ main_minimal_net(void)
   return 0;
 }
 /*---------------------------------------------------------------------------*/
-
+#if 0
 unsigned short
 sensors_light1(void)
 {
   static unsigned short count;
   return count++;
 }
+#endif
 /*---------------------------------------------------------------------------*/
 
 void InitializeUART(void)
@@ -524,7 +532,7 @@ char ReadUARTN(void)
 
 void WriteUARTN(char c)
 {
-	
+	(void)c;
 }
 
  

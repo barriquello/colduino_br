@@ -54,6 +54,8 @@
 /// Define if the optimized scheduler will be used
 #define OPTIMIZED_SCHEDULER 1
 
+#define STACK_MARK  1
+
 /// Define if nesting interrupt is active
 #define NESTING_INT 1
 
@@ -124,12 +126,19 @@ extern INT32U SPvalue;
 // D0-D7 (32 bytes) + A0-A6 (28 bytes) + Format (1 byte) + Vector (1 byte) + SR (2 bytes) + SP (4 bytes)
 /// Minimum size of a task stack.
 /// Example in the coldfire processor: D0-D7 (32 bytes) + A0-A6 (28 bytes) + Format (1 byte) + Vector (1 byte) + SR (2 bytes) + SP (4 bytes) = 68 bytes
+#if (defined STACK_MARK && STACK_MARK == 1)
+#if (NESTING_INT == 1)
+#define NUMBER_MIN_OF_STACKED_BYTES (72+4)
+#else
+#define NUMBER_MIN_OF_STACKED_BYTES (68+4)
+#endif
+#else
 #if (NESTING_INT == 1)
 #define NUMBER_MIN_OF_STACKED_BYTES 72
 #else
 #define NUMBER_MIN_OF_STACKED_BYTES 68
 #endif
-
+#endif
 // User defined: stacked for user function calls + local variables
 // Ainda, como podem ocorrer interrupções durante as tarefas, alocar 28 bytes a cada
 // interrupção ativa

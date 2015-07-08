@@ -345,6 +345,10 @@ void asm_exception_handler(void)
 	PTBD_PTBD0 = 0;
 	PTBDD_PTBDD0 = 1;
 	
+	#if (NESTING_INT == 1)
+	OS_ENABLE_NESTING();
+	#endif
+	
 	DisableInterrupts;
 	
 	while (1)
@@ -512,7 +516,7 @@ __declspec(weak)   vectorTableEntryType vector_68 @Vpdb = asm_exception_handler;
 __declspec(weak)   vectorTableEntryType vector_69 @Vdac = asm_exception_handler;
 __declspec(weak)   vectorTableEntryType vector_70 @Vspi1 = asm_exception_handler;
 __declspec(weak)   vectorTableEntryType vector_71 @Vadc = asm_exception_handler;
-__declspec(weak)   vectorTableEntryType vector_72 @Vusb = asm_exception_handler; //USB_ISR;
+__declspec(weak)   vectorTableEntryType vector_72 @Vusb = USB_ISR;
 __declspec(weak)   vectorTableEntryType vector_73 @Vtpm1ch0 = asm_exception_handler;
 __declspec(weak)   vectorTableEntryType vector_74 @Vtpm1ch1 = asm_exception_handler;
 __declspec(weak)   vectorTableEntryType vector_75 @Vtpm1ch2 = asm_exception_handler;

@@ -215,6 +215,10 @@ interrupt void SwitchContext(void)
    OS_CPU_TYPE *stk_pt = (OS_CPU_TYPE*)&STACK[iStackAddress + (NUMBER_OF_STACKED_BYTES / sizeof(OS_CPU_TYPE))];
    //INT32U *stk_pt = (INT32U*)&STACK[iStackAddress + NUMBER_OF_STACKED_BYTES];
    
+#if (defined STACK_MARK && STACK_MARK == 1)
+   *--stk_pt = (INT32U)(('TSK'<<8) + NumberOfInstalledTasks + '0');
+#endif 
+   
    // Pointer to Task Entry
    *--stk_pt = (INT32U)FctPtr;
 
