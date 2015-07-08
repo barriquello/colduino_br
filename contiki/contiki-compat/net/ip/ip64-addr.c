@@ -35,6 +35,7 @@
 #include <string.h>
 
 #define printf(...)
+
 /*---------------------------------------------------------------------------*/
 void
 ip64_addr_copy4(uip_ip4addr_t *dest, const uip_ip4addr_t *src)

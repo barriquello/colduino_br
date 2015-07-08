@@ -57,7 +57,7 @@
 #define STACK_MARK  1
 
 /// Define if nesting interrupt is active
-#define NESTING_INT 1
+#define NESTING_INT 0
 
 #define TASK_WITH_PARAMETERS 0
 

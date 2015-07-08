@@ -67,6 +67,7 @@ extern char ReadUARTN(void);
 extern void WriteUARTN(char c);
 
 #define fprintf(...)
+#define PRINTF(...)
 
 PROCINIT(&etimer_process,
 	 &tcpip_process,
@@ -306,7 +307,7 @@ sprint_ip6(uip_ip6addr_t addr)
   }
   *result++=']';
   *result=0;
-  printf("%s", thestring);
+  PRINTF("%s", thestring);
 }
 #endif /* NETSTACK_CONF_WITH_IPV6 */
 /*---------------------------------------------------------------------------*/
@@ -436,17 +437,17 @@ main_minimal_net(void)
   /* Make standard output unbuffered. */
   //setvbuf(stdout, (char *)NULL, _IONBF, 0);
 
-  printf("\n*******%s online*******\n",CONTIKI_VERSION_STRING);
+  PRINTF("\n*******%s online*******\n",CONTIKI_VERSION_STRING);
 
-#if NETSTACK_CONF_WITH_IPV6 && !RPL_BORDER_ROUTER  /* Border router process prints addresses later */
+#if 0 && NETSTACK_CONF_WITH_IPV6 && !RPL_BORDER_ROUTER  /* Border router process prints addresses later */
   {
     int i = 0;
     int interface_count = 0;
     for(i = 0; i < UIP_DS6_ADDR_NB; i++) {
       if(uip_ds6_if.addr_list[i].isused) {
-        printf("IPV6 Addresss: ");
+    	PRINTF("IPV6 Addresss: ");
         sprint_ip6(uip_ds6_if.addr_list[i].ipaddr);
-        printf("\n");
+        PRINTF("\n");
         interface_count++;
       }
     }
@@ -464,9 +465,9 @@ main_minimal_net(void)
 
 #if DEBUG_SLEEP
     if(n > 0)
-      printf("sleep: %d events pending\n",n);
+    	PRINTF("sleep: %d events pending\n",n);
     else
-      printf("sleep: next event @ T-%.03f\n",(double)next_event / (double)CLOCK_SECOND);
+    	PRINTF("sleep: next event @ T-%.03f\n",(double)next_event / (double)CLOCK_SECOND);
 #endif
 
 #if __CYGWIN__ || _WIN32

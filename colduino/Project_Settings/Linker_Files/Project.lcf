@@ -11,7 +11,7 @@ MEMORY {
 SECTIONS {
 
 # Heap and Stack sizes definition
-  ___heap_size     = 0x0000;
+  ___heap_size     = 0x0100;
   ___stack_size    = 0x0200;
 
 # MCF51JE256 Derivative Memory map definitions from linker command files:
