@@ -57,7 +57,7 @@
 #define STACK_MARK  1
 
 /// Define if nesting interrupt is active
-#define NESTING_INT 0
+#define NESTING_INT 1
 
 #define TASK_WITH_PARAMETERS 0
 
@@ -453,6 +453,16 @@ inline asm __declspec(register_abi) void OSRestoreISR(void) {
                                   OS_RESTORE_CONTEXT();  \
                                   OS_RESTORE_ISR()
 
+
+//////////////// ISR dedicated stack /////////////////
+#define ISR_DEDICATED_STACK 1
+
+#if (defined ISR_DEDICATED_STACK && defined ISR_DEDICATED_STACK == 1)
+	#define OS_RESTORE_ISR_SP()    asm{move.l SPval_bkp, a7}
+	#define ISR_STACK_SIZE  (100)
+	extern  OS_CPU_TYPE ISR_STACK[ISR_STACK_SIZE];
+	extern INT32U SPval_bkp;
+#endif
 
 
 #endif

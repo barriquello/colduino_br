@@ -31,21 +31,25 @@
 #include "dev/slip.h"
 
 #include "virtual_com.h"
+//#include "usb_terminal.h"
+//#include "usb_terminal_commands.h"
+
 void
 slip_arch_init(unsigned long ubr)
 {	
-    (void) CDC_Init(); /* Initialize the USB CDC Application */
+	(void)ubr;
+    (void)CDC_Init(); /* Initialize the USB CDC Application */ 
 }
 
 /*-----------------------------------------------------------------------------------*/
 void
 slip_arch_writeb(unsigned char c)
 {
-	while(cdc_putch(c) == c)
+	while(cdc_putch(c) != c)
 	{
-		DelayTask(1);
+		DelayTask(2);
 	}
-	cdc_process();
+	//cdc_process();
 	
 }
 

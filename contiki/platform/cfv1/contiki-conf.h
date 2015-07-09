@@ -181,5 +181,12 @@ int strcasecmp(const char*, const char*);
 
 #define AUTOSTART_ENABLE 	1
 
+#define PROJECT_CONF_H 1
+
+#if PROJECT_CONF_H
+#include "project-conf.h"
+#endif /* PROJECT_CONF_H */
+
+
 
 #endif /* CONTIKI_CONF_H_ */

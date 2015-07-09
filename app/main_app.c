@@ -41,7 +41,7 @@ void main_app(void)
 		while (1){};
 	};
 
-	if (InstallTask(&contiki_main, "Contiki", 512, 2, NULL) != OK)
+	if (InstallTask(&contiki_main, "Contiki", 1024, 2, NULL) != OK)
 	{
 		while (1){};
 	};

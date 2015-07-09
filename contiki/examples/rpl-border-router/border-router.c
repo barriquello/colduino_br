@@ -45,6 +45,7 @@
 #include "net/netstack.h"
 #include "dev/button-sensor.h"
 #include "dev/slip.h"
+#include "virtual_com.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -350,7 +351,7 @@ PROCESS_THREAD(border_router_process, ev, data)
 
   PROCESS_PAUSE();
 
-  SENSORS_ACTIVATE(button_sensor);
+  //SENSORS_ACTIVATE(button_sensor);
 
   PRINTF("RPL-Border router started\n");
 #if 0
@@ -364,6 +365,10 @@ PROCESS_THREAD(border_router_process, ev, data)
   /* Request prefix until it has been received */
   while(!prefix_set) {
     etimer_set(&et, CLOCK_SECOND);
+    while(GetStart_transactions() == FALSE)
+    {
+    	DelayTask(1000);
+    }
     request_prefix();
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
   }
@@ -373,13 +378,14 @@ PROCESS_THREAD(border_router_process, ev, data)
    */
   NETSTACK_MAC.off(1);
 
-#if DEBUG || 1
+#if DEBUG
   print_local_addresses();
 #endif
 
   while(1) {
-    PROCESS_YIELD();
-    if (ev == sensors_event && data == &button_sensor) {
+    PROCESS_YIELD(); 
+    
+    if (ev == sensors_event){ //&& data == &button_sensor) {
       PRINTF("Initiating global repair\n");
       rpl_repair_root(RPL_DEFAULT_INSTANCE);
     }
