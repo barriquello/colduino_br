@@ -30,17 +30,23 @@
 
 #include "dev/slip.h"
 
+#include "virtual_com.h"
 void
 slip_arch_init(unsigned long ubr)
-{
-
+{	
+    (void) CDC_Init(); /* Initialize the USB CDC Application */
 }
 
 /*-----------------------------------------------------------------------------------*/
 void
 slip_arch_writeb(unsigned char c)
 {
-
+	while(cdc_putch(c) == c)
+	{
+		DelayTask(1);
+	}
+	cdc_process();
+	
 }
 
 void slipdev_char_put(uint8_t c)

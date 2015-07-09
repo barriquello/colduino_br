@@ -172,7 +172,7 @@ slip_poll_handler(uint8_t *outbuf, uint16_t blen)
       rxbuf_init();
       
       for(i = 0; i < 13; i++) {
-	slip_arch_writeb("CLIENTSERVER\300"[i]);
+    	  	  slip_arch_writeb("CLIENTSERVER\300"[i]);
       }
       return 0;
     }
@@ -351,14 +351,14 @@ slip_input_byte(unsigned char c)
 	 * There may already be one packet buffered.
 	 */
       if(end != pkt_end) {	/* Non zero length. */
-	if(begin == pkt_end) {	/* None buffered. */
-	  pkt_end = end;
-	} else {
-	  state = STATE_TWOPACKETS;
-	  SLIP_STATISTICS(slip_twopackets++);
-	}
-	process_poll(&slip_process);
-	return 1;
+		if(begin == pkt_end) {	/* None buffered. */
+		  pkt_end = end;
+		} else {
+		  state = STATE_TWOPACKETS;
+		  SLIP_STATISTICS(slip_twopackets++);
+		}
+		process_poll(&slip_process);
+		return 1;
       }
       return 0;
     }

@@ -56,6 +56,10 @@
 #include "sys/etimer.h"
 
 #include "dev/serial-line.h"
+#include "dev/slip.h"
+ 
+#include "BRTOS.h"
+extern BRTOS_Queue 	*USB;
 
 int main_win(void);
 int main_minimal_net(void);
@@ -458,6 +462,7 @@ main_minimal_net(void)
   while(1) {
 
     int n;
+    char c;
     clock_time_t next_event;
 
     n = process_run();
@@ -479,33 +484,16 @@ main_minimal_net(void)
     if(next_event > (CLOCK_SECOND * 2))
     	next_event = CLOCK_SECOND * 2;
 
-     DelayTask((INT16U)next_event);
-
-#if 0
-    FD_ZERO(&fds);
-    FD_SET(STDIN_FILENO, &fds);
-#if __CYGWIN__ || _WIN32
-    select(1, &fds, NULL, NULL, &tv);
-#else
-    FD_SET(tapdev_fd(), &fds);
-    if(0 > select(tapdev_fd() + 1, &fds, NULL, NULL, &tv)) {
-      perror("Call to select() failed.");
-      exit(EXIT_FAILURE);
-    }
-#endif
-
-    if(FD_ISSET(STDIN_FILENO, &fds)) {
-      char c;
-      if(read(STDIN_FILENO, &c, 1) > 0)
-      {
-    	  serial_line_input_byte(c);
-      }
-    }
-#endif
-#if __CYGWIN__ || _WIN32
-    process_poll(&wpcap_process);
-#endif
-    etimer_request_poll();
+     //DelayTask((INT16U)next_event);
+     
+#if 1     
+     if(OSQueuePend(USB, &c, (INT16U)next_event) != TIMEOUT)
+     {
+    	 slip_input_byte(c);
+     }     
+#endif     
+     
+     etimer_request_poll();
   }
 
   return 0;
