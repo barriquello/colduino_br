@@ -356,6 +356,11 @@ main_minimal_net(void)
 #endif /* HARD_CODED_ADDRESS */
 #endif /* NETSTACK_CONF_WITH_IPV6 */
 
+  	queuebuf_init();
+  	NETSTACK_RDC.init();
+  	NETSTACK_MAC.init();
+  	NETSTACK_NETWORK.init();
+  	
   process_init();
 /* procinit_init initializes RPL which sets a ctimer for the first DIS */
 /* We must start etimers and ctimers,before calling it */
@@ -403,7 +408,8 @@ main_minimal_net(void)
   }
 #else /* NETSTACK_CONF_WITH_IPV6 */
 
-#if !UIP_CONF_IPV6_RPL
+
+#if 0 && !UIP_CONF_IPV6_RPL
   {
     uip_ipaddr_t ipaddr;
 #ifdef HARD_CODED_ADDRESS
@@ -443,19 +449,21 @@ main_minimal_net(void)
 
   PRINTF("\n*******%s online*******\n",CONTIKI_VERSION_STRING);
 
-#if 0 && NETSTACK_CONF_WITH_IPV6 && !RPL_BORDER_ROUTER  /* Border router process prints addresses later */
+#if NETSTACK_CONF_WITH_IPV6 && !RPL_BORDER_ROUTER  /* Border router process prints addresses later */
   {
     int i = 0;
     int interface_count = 0;
     for(i = 0; i < UIP_DS6_ADDR_NB; i++) {
       if(uip_ds6_if.addr_list[i].isused) {
+#if 0
     	PRINTF("IPV6 Addresss: ");
         sprint_ip6(uip_ds6_if.addr_list[i].ipaddr);
         PRINTF("\n");
+#endif        
         interface_count++;
       }
     }
-    assert(0 < interface_count);
+    //assert(0 < interface_count);
   }
 #endif
 

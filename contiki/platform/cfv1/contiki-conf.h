@@ -9,7 +9,6 @@
 
 #define ARCH_DOESNT_NEED_ALIGNED_STRUCTS 1
 
-
 #define CCIF
 #define CLIF
 
@@ -53,10 +52,19 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_UDP                  1
 #define UIP_CONF_TCP                  1
 
-#define UIP_CONF_LLH_LEN              14
+#define LINKADDR_CONF_SIZE              8
+
+#define UIP_CONF_LL_802154              1
+#define UIP_CONF_LLH_LEN                0
+//#define UIP_CONF_LLH_LEN              14
+
+#ifndef UIP_CONF_ROUTER
+#define UIP_CONF_ROUTER                 1 
+#endif
+
 #define UIP_CONF_MAX_LISTENPORTS      20
 #define UIP_CONF_MAX_CONNECTIONS      20
-#define UIP_CONF_BYTE_ORDER           UIP_LITTLE_ENDIAN
+#define UIP_CONF_BYTE_ORDER           UIP_BIG_ENDIAN
 
 #define UIP_CONF_BUFFER_SIZE          1514
 #define UIP_CONF_TCP_SPLIT            0

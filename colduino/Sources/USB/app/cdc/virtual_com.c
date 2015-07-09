@@ -343,7 +343,7 @@ static void USB_Notify_Callback (
         if(event_type == USB_APP_CDC_CARRIER_ACTIVATED)
         {
             start_transactions = TRUE;
-            echo (">> BRTOS Started!", FALSE);
+            //echo (">> BRTOS Started!", FALSE);
         }
         else if(event_type == USB_APP_CDC_CARRIER_DEACTIVATED)
         {

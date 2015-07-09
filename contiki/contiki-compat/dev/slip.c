@@ -177,6 +177,7 @@ slip_poll_handler(uint8_t *outbuf, uint16_t blen)
       return 0;
     }
   }
+#define SLIP_CONF_ANSWER_MAC_REQUEST 1  
 #ifdef SLIP_CONF_ANSWER_MAC_REQUEST
   else if(rxbuf[begin] == '?') { 
     /* Used by tapslip6 to request mac for auto configure */
@@ -190,13 +191,13 @@ slip_poll_handler(uint8_t *outbuf, uint16_t blen)
       
       rxbuf_init();
       
-      linkaddr_t addr = get_mac_addr();
+      //linkaddr_t addr = get_mac_addr();
       /* this is just a test so far... just to see if it works */
       slip_arch_writeb('!');
       slip_arch_writeb('M');
       for(j = 0; j < 8; j++) {
-        slip_arch_writeb(hexchar[addr.u8[j] >> 4]);
-        slip_arch_writeb(hexchar[addr.u8[j] & 15]);
+        slip_arch_writeb(hexchar[uip_lladdr.addr[j] >> 4]);
+        slip_arch_writeb(hexchar[uip_lladdr.addr[j] & 15]);
       }
       slip_arch_writeb(SLIP_END);
       return 0;

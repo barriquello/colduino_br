@@ -383,12 +383,10 @@ PROCESS_THREAD(border_router_process, ev, data)
 #endif
 
   while(1) {
-    PROCESS_YIELD(); 
+    PROCESS_YIELD();   
     
-    if (ev == sensors_event){ //&& data == &button_sensor) {
-      PRINTF("Initiating global repair\n");
-      rpl_repair_root(RPL_DEFAULT_INSTANCE);
-    }
+    PRINTF("Initiating global repair\n");
+    rpl_repair_root(RPL_DEFAULT_INSTANCE);
   }
 
   PROCESS_END();
