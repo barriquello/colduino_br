@@ -70,12 +70,16 @@ extern void InitializeUART(void);
 extern char ReadUARTN(void);
 extern void WriteUARTN(char c);
 
+#include "printf_lib.h"
+#define printf(...)	printf_lib(__VA_ARGS__)
 #define fprintf(...)
-#define PRINTF(...)
+#define PRINTF(...)	printf_lib(__VA_ARGS__)
 
-PROCINIT(&etimer_process,
-	 &tcpip_process,
-	 &resolv_process);
+
+
+void print_lladdrs(void) ;
+
+PROCINIT(&tcpip_process);
 
 
 //#include "webserver-nogui.h"
@@ -169,6 +173,8 @@ int main_win(void)
 void
 debug_printf(char *format, ...)
 {
+  
+#if 0	
   va_list argptr;
   char buffer[256];
 
@@ -181,18 +187,23 @@ debug_printf(char *format, ...)
 #else /* WITH_GUI */
   //fputs(buffer, stderr);
 #endif /* WITH_GUI */
+#endif
+  while(1)
+  {
+	  __RESET_WATCHDOG();
+  }
 }
 /*-----------------------------------------------------------------------------------*/
 void
 uip_log(char *message)
 {
-  debug_printf("%s\n", message);
+  printf("%s\n", message);
 }
 /*-----------------------------------------------------------------------------------*/
 void
 log_message(const char *part1, const char *part2)
 {
-  debug_printf("%s%s\n", part1, part2);
+  printf("%s%s\n", part1, part2);
 }
 /*-----------------------------------------------------------------------------------*/
 
@@ -317,49 +328,23 @@ sprint_ip6(uip_ip6addr_t addr)
 /*---------------------------------------------------------------------------*/
 
 
+const linkaddr_t addr = {{0x00,0x00,0x00,0x06,0x98,0x00,0x02,0x32}};
 
 int
 main_minimal_net(void)
 {
 
 	clock_init();
-#if NETSTACK_CONF_WITH_IPV6
-/* A hard coded address overrides the stack default MAC address to
-   allow multiple instances. uip6.c defines it as
-   {0x00,0x06,0x98,0x00,0x02,0x32} giving an ipv6 address of
-   [fe80::206:98ff:fe00:232] We make it simpler, {0x02,0x00,0x00 + the
-   last three bytes of the hard coded address (if any are nonzero).
-   HARD_CODED_ADDRESS can be defined in the contiki-conf.h file, or
-   here to allow quick builds using different addresses.  If
-   HARD_CODED_ADDRESS has a prefix it also applied, unless built as a
-   RPL end node.  E.g. bbbb::12:3456 becomes fe80::ff:fe12:3456 and
-   prefix bbbb::/64 if non-RPL ::10 becomes fe80::ff:fe00:10 and
-   prefix awaits RA or RPL formation bbbb:: gives an address of
-   bbbb::206:98ff:fe00:232 if non-RPL */
-#ifdef HARD_CODED_ADDRESS
-  {
-  uip_ipaddr_t ipaddr;
-  uiplib_ipaddrconv(HARD_CODED_ADDRESS, &ipaddr);
-  if((ipaddr.u8[13] != 0) ||
-     (ipaddr.u8[14] != 0) ||
-     (ipaddr.u8[15] != 0)) {
-    if(sizeof(uip_lladdr) == 6) {  /* Minimal-net uses ethernet MAC */
-      uip_lladdr.addr[0] = 0x02;
-      uip_lladdr.addr[1] = 0;
-      uip_lladdr.addr[2] = 0;
-      uip_lladdr.addr[3] = ipaddr.u8[13];
-      uip_lladdr.addr[4] = ipaddr.u8[14];
-      uip_lladdr.addr[5] = ipaddr.u8[15];
-    }
-  }
- }
-#endif /* HARD_CODED_ADDRESS */
-#endif /* NETSTACK_CONF_WITH_IPV6 */
-
+	
+	linkaddr_set_node_addr(&addr);
+	memcpy(&uip_lladdr.addr, &linkaddr_node_addr.u8, sizeof(uip_lladdr.addr));
+	
+#if 0	
   	queuebuf_init();
   	NETSTACK_RDC.init();
   	NETSTACK_MAC.init();
   	NETSTACK_NETWORK.init();
+#endif  	
   	
   process_init();
 /* procinit_init initializes RPL which sets a ctimer for the first DIS */
@@ -367,105 +352,18 @@ main_minimal_net(void)
   process_start(&etimer_process, NULL);
   ctimer_init();
 
-#if RPL_BORDER_ROUTER
-  process_start(&border_router_process, NULL);
-  printf("Border Router Process started\n");
-#elif UIP_CONF_IPV6_RPL
-  printf("RPL enabled\n");
-#endif
-
   procinit_init();
 
 #if AUTOSTART_ENABLE
   autostart_start(autostart_processes);
 #endif
 
-  /* Set default IP addresses if not specified */
-#if !NETSTACK_CONF_WITH_IPV6
-  {
-    uip_ipaddr_t addr;
-
-    uip_gethostaddr(&addr);
-    if(addr.u8[0] == 0) {
-      uip_ipaddr(&addr, 172,18,0,2);
-    }
-    printf("IP Address:  %d.%d.%d.%d\n", uip_ipaddr_to_quad(&addr));
-    uip_sethostaddr(&addr);
-
-    uip_getnetmask(&addr);
-    if(addr.u8[0] == 0) {
-      uip_ipaddr(&addr, 255,255,0,0);
-      uip_setnetmask(&addr);
-    }
-    printf("Subnet Mask: %d.%d.%d.%d\n", uip_ipaddr_to_quad(&addr));
-
-    uip_getdraddr(&addr);
-    if(addr.u8[0] == 0) {
-      uip_ipaddr(&addr, 172,18,0,1);
-      uip_setdraddr(&addr);
-    }
-    printf("Def. Router: %d.%d.%d.%d\n", uip_ipaddr_to_quad(&addr));
-  }
-#else /* NETSTACK_CONF_WITH_IPV6 */
-
-
-#if 0 && !UIP_CONF_IPV6_RPL
-  {
-    uip_ipaddr_t ipaddr;
-#ifdef HARD_CODED_ADDRESS
-    uiplib_ipaddrconv(HARD_CODED_ADDRESS, &ipaddr);
-#else
-    uip_ip6addr(&ipaddr, 0xaaaa, 0, 0, 0, 0, 0, 0, 0);
-#endif
-    if((ipaddr.u16[0] != 0) ||
-       (ipaddr.u16[1] != 0) ||
-       (ipaddr.u16[2] != 0) ||
-       (ipaddr.u16[3] != 0)) {
-#if UIP_CONF_ROUTER
-      if(!uip_ds6_prefix_add(&ipaddr, UIP_DEFAULT_PREFIX_LEN, 0, 0, 0, 0)) {
-        fprintf(stderr,"uip_ds6_prefix_add() failed.\n");
-        exit(EXIT_FAILURE);
-      }
-#else /* UIP_CONF_ROUTER */
-      if(!uip_ds6_prefix_add(&ipaddr, UIP_DEFAULT_PREFIX_LEN, 0)) {
-        fprintf(stderr,"uip_ds6_prefix_add() failed.\n");
-        exit(EXIT_FAILURE);
-      }
-#endif /* UIP_CONF_ROUTER */
-
-      uip_ds6_set_addr_iid(&ipaddr, &uip_lladdr);
-      uip_ds6_addr_add(&ipaddr, 0, ADDR_AUTOCONF);
-    }
-  }
-#endif /* !UIP_CONF_IPV6_RPL */
-
-#endif /* !NETSTACK_CONF_WITH_IPV6 */
-
- // procinit_init();
- // autostart_start(autostart_processes);
-
-  /* Make standard output unbuffered. */
-  //setvbuf(stdout, (char *)NULL, _IONBF, 0);
+ #define DEBUG_ANNOTATE  1
+ #if DEBUG_ANNOTATE
+	print_lladdrs();
+  #endif
 
   PRINTF("\n*******%s online*******\n",CONTIKI_VERSION_STRING);
-
-#if NETSTACK_CONF_WITH_IPV6 && !RPL_BORDER_ROUTER  /* Border router process prints addresses later */
-  {
-    int i = 0;
-    int interface_count = 0;
-    for(i = 0; i < UIP_DS6_ADDR_NB; i++) {
-      if(uip_ds6_if.addr_list[i].isused) {
-#if 0
-    	PRINTF("IPV6 Addresss: ");
-        sprint_ip6(uip_ds6_if.addr_list[i].ipaddr);
-        PRINTF("\n");
-#endif        
-        interface_count++;
-      }
-    }
-    //assert(0 < interface_count);
-  }
-#endif
 
   while(1) {
 
@@ -476,26 +374,14 @@ main_minimal_net(void)
     n = process_run();
     next_event = etimer_next_expiration_time() - clock_time();
 
-#if DEBUG_SLEEP
-    if(n > 0)
-    	PRINTF("sleep: %d events pending\n",n);
-    else
-    	PRINTF("sleep: next event @ T-%.03f\n",(double)next_event / (double)CLOCK_SECOND);
-#endif
-
-#if __CYGWIN__ || _WIN32
-    /* wpcap doesn't appear to support select, so
-     * we can't idle the process on windows. */
-    next_event = 0;
-#endif
-
     if(next_event > (CLOCK_SECOND * 2))
     	next_event = CLOCK_SECOND * 2;
 
      //DelayTask((INT16U)next_event);
      
 #if 1     
-     if(OSQueuePend(USB, &c, (INT16U)next_event) != TIMEOUT)
+     
+     while(OSQueuePend(USB, &c, (INT16U)next_event) != TIMEOUT)
      {
     	 slip_input_byte(c);
      }     
@@ -517,21 +403,48 @@ sensors_light1(void)
 #endif
 /*---------------------------------------------------------------------------*/
 
+#if 1
 void InitializeUART(void)
 {
+	while(1){
+		__RESET_WATCHDOG();
+	}
 	
 }
 
 char ReadUARTN(void)
 {
-	
+	while(1){
+		__RESET_WATCHDOG();
+		}
 }
 
 void WriteUARTN(char c)
 {
 	(void)c;
+	while(1){
+		__RESET_WATCHDOG();
+	}
 }
+#endif
 
+void print_lladdrs(void) {	
+	int i, a;
+	printf("Tentative link-local IPv6 address ");
+	
+	for(a = 0; a < UIP_DS6_ADDR_NB; a++) {
+		if (uip_ds6_if.addr_list[a].isused) {
+			for(i = 0; i < 7; ++i) {
+				printf("%02x%02x:",
+				       uip_ds6_if.addr_list[a].ipaddr.u8[i * 2],
+				       uip_ds6_if.addr_list[a].ipaddr.u8[i * 2 + 1]);
+			}
+			printf("%02x%02x\n",
+			       uip_ds6_if.addr_list[a].ipaddr.u8[14],
+			       uip_ds6_if.addr_list[a].ipaddr.u8[15]);
+		}
+	}
+}
  
 
 

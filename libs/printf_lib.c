@@ -30,9 +30,17 @@
 #include "usb_terminal.h"
 #include "printf_lib.h"
 
+#define PRINTF_BUFSIZE 512
 
-#define putchar(x) putchar_usb(x)
+static printf_idx;
+char printf_buf[PRINTF_BUFSIZE];
 
+#define putchar(x)  putchar_buf(x) //putchar_usb(x)
+
+void putchar_buf(char c)
+{
+	printf_buf[printf_idx++%PRINTF_BUFSIZE] = c;
+}
 
 static void printchar(char **str, int c)
 {

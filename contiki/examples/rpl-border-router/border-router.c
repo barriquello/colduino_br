@@ -365,11 +365,10 @@ PROCESS_THREAD(border_router_process, ev, data)
   /* Request prefix until it has been received */
   while(!prefix_set) {
     etimer_set(&et, CLOCK_SECOND);
-    while(GetStart_transactions() == FALSE)
+    if(GetStart_transactions() == TRUE)
     {
-    	DelayTask(1000);
+    	request_prefix();
     }
-    request_prefix();
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
   }
 
@@ -384,9 +383,10 @@ PROCESS_THREAD(border_router_process, ev, data)
 
   while(1) {
     PROCESS_YIELD();   
-    
-    PRINTF("Initiating global repair\n");
-    rpl_repair_root(RPL_DEFAULT_INSTANCE);
+    if (ev == sensors_event){
+		PRINTF("Initiating global repair\n");
+		rpl_repair_root(RPL_DEFAULT_INSTANCE);
+    }
   }
 
   PROCESS_END();

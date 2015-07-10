@@ -286,8 +286,8 @@ static void USB_App_Callback (
         {
 			for(index = 0; index<BytesToBeCopied ; index++)
 			{            
-				if (dp_rcv->data_ptr[index] != 0)
-				{
+				//if (dp_rcv->data_ptr[index] != 0)
+				//{
 					if (OSQueuePost(USB, dp_rcv->data_ptr[index]) == BUFFER_UNDERRUN)
 					{
 					  // Buffer overflow 					
@@ -295,7 +295,7 @@ static void USB_App_Callback (
 						   __RESET_WATCHDOG();
 					   }
 					}
-				}
+				//}
 			}
 			/* Previous Send is complete. Queue next receive */
 			(void)USB_Class_CDC_Interface_DIC_Recv_Data(CONTROLLER_ID, NULL, 0);

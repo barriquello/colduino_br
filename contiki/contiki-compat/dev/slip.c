@@ -215,22 +215,22 @@ slip_poll_handler(uint8_t *outbuf, uint16_t blen)
     if(begin < pkt_end) {
       len = pkt_end - begin;
       if(len > blen) {
-	len = 0;
+    	  len = 0;
       } else {
-	memcpy(outbuf, &rxbuf[begin], len);
+    	  memcpy(outbuf, &rxbuf[begin], len);
       }
     } else {
       len = (RX_BUFSIZE - begin) + (pkt_end - 0);
       if(len > blen) {
-	len = 0;
+    	  len = 0;
       } else {
-	unsigned i;
-	for(i = begin; i < RX_BUFSIZE; i++) {
-	  *outbuf++ = rxbuf[i];
-	}
-	for(i = 0; i < pkt_end; i++) {
-	  *outbuf++ = rxbuf[i];
-	}
+		unsigned i;
+		for(i = begin; i < RX_BUFSIZE; i++) {
+		  *outbuf++ = rxbuf[i];
+		}
+		for(i = 0; i < pkt_end; i++) {
+		  *outbuf++ = rxbuf[i];
+		}
       }
     }
 

@@ -3,7 +3,7 @@
 
 #include "BRTOS.h"
 
-#define CC_CONF_REGISTER_ARGS 1
+//#define CC_CONF_REGISTER_ARGS 1
 #define CC_CONF_FASTCALL
 #define CC_CONF_INLINE   __inline
 
@@ -62,15 +62,14 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_ROUTER                 1 
 #endif
 
-#define UIP_CONF_MAX_LISTENPORTS      20
-#define UIP_CONF_MAX_CONNECTIONS      20
-#define UIP_CONF_BYTE_ORDER           UIP_BIG_ENDIAN
+#define UIP_CONF_MAX_LISTENPORTS      4
+#define UIP_CONF_MAX_CONNECTIONS      4
+#define UIP_CONF_BYTE_ORDER           UIP_BIG_ENDIAN //UIP_LITTLE_ENDIAN //UIP_BIG_ENDIAN
 
 #define UIP_CONF_BUFFER_SIZE          1514
 #define UIP_CONF_TCP_SPLIT            0
-#define UIP_CONF_LOGGING              0
+#define UIP_CONF_LOGGING              1
 #define UIP_CONF_IP_FORWARD           0
-#define UIP_CONF_LOGGING              0
 #define UIP_CONF_UDP_CHECKSUMS        1
 
 #if NETSTACK_CONF_WITH_IPV6
@@ -81,7 +80,7 @@ typedef unsigned short uip_stats_t;
 #define NBR_TABLE_CONF_MAX_NEIGHBORS     20
 #define UIP_CONF_DS6_DEFRT_NBU   		2
 #define UIP_CONF_DS6_PREFIX_NBU  		5
-#define UIP_CONF_MAX_ROUTES   			100
+#define UIP_CONF_MAX_ROUTES   			10
 #define UIP_CONF_DS6_ADDR_NBU    		10
 #define UIP_CONF_DS6_MADDR_NBU   		0
 #define UIP_CONF_DS6_AADDR_NBU   		0
@@ -89,6 +88,9 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_IP_FORWARD          1
 #endif /* NETSTACK_CONF_WITH_IPV6 */
 
+
+#undef HARD_CODED_ADDRESS
+#define HARD_CODED_ADDRESS            "bbbb::1" //bbbb::ff:fe00:1 is the RPL border router default
 
 #define RESOLV_CONF_SUPPORTS_MDNS              0
 #define RESOLV_CONF_SUPPORTS_RECORD_EXPIRATION 0
