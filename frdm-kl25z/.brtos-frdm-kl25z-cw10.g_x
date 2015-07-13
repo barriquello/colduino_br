@@ -1,0 +1,62 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="4">
+        <Line>"${ProjDirPath}/Static_Code\PDD"</Line>
+        <Line>"${ProjDirPath}/Static_Code\IO_Map"</Line>
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Static_Code/PDD/LPTMR_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480359" FileType="1048576" />
+      <File Name="Documentation/brtos-frdm-kl25z-cw10_SIGNALS.txt" FileDate="2015-07-12, 16:30:23" FileAge="1436729423317" FileType="3072" />
+      <File Name="Documentation/doxygen/pex.doxyfile" FileDate="2015-07-12, 15:24:41" FileAge="1436725481217" FileType="45637" CompNumb="2" />
+      <File Name="Static_Code/PDD/CMP_PDD.h" FileDate="2015-07-12, 15:24:39" FileAge="1436725479189" FileType="1048576" />
+      <File Name="Static_Code/PDD/SPI_PDD.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481014" FileType="1048576" />
+      <File Name="Static_Code/PDD/SysTick_PDD.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481061" FileType="1048576" />
+      <File Name="Project_Settings/Debugger/MKL25Z128.mem" FileDate="2015-07-12, 15:24:41" FileAge="1436725481201" FileType="45637" CompNumb="2" />
+      <File Name="Sources/Events.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481170" FileType="131328" />
+      <File Name="Static_Code/PDD/USB_PDD.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481139" FileType="1048576" />
+      <File Name="Generated_Code/PE_LDD.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481186" FileType="45637" CompNumb="2" />
+      <File Name="Sources/Events.c" FileDate="2015-07-12, 15:24:41" FileAge="1436725481155" FileType="131328" />
+      <File Name="Static_Code/PDD/COP_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480000" FileType="1048576" />
+      <File Name="Generated_Code/PE_LDD.c" FileDate="2015-07-12, 15:24:41" FileAge="1436725481201" FileType="45637" CompNumb="2" />
+      <File Name="Documentation/doxygen/RoutingReport.txt" FileDate="2015-07-12, 15:24:41" FileAge="1436725481217" FileType="45637" CompNumb="2" />
+      <File Name="Static_Code/PDD/DMAMUX_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480031" FileType="1048576" />
+      <File Name="Static_Code/PDD/PIT_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480390" FileType="1048576" />
+      <File Name="Documentation/brtos-frdm-kl25z-cw10_Settings.xml" FileDate="2015-07-12, 15:24:41" FileAge="1436725481391" FileType="3072" />
+      <File Name="Static_Code/PDD/UART0_PDD.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481092" FileType="1048576" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481313" FileType="45637" CompNumb="2" />
+      <File Name="Static_Code/PDD/GPIO_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480172" FileType="1048576" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2015-07-12, 15:24:41" FileAge="1436725481297" FileType="45637" CompNumb="2" />
+      <File Name="Sources/main.c" FileDate="2015-07-12, 16:21:04" FileAge="1436728864113" FileType="128" />
+      <File Name="Documentation/brtos-frdm-kl25z-cw10.txt" FileDate="2015-07-12, 15:24:41" FileAge="1436725481422" FileType="3072" />
+      <File Name="Static_Code/PDD/PDD_Types.h" FileDate="2015-07-12, 15:24:38" FileAge="1436725478138" FileType="1048576" CompNumb="2" />
+      <File Name="Static_Code/PDD/DMA_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480047" FileType="1048576" />
+      <File Name="Static_Code/PDD/ADC_PDD.h" FileDate="2015-07-12, 15:24:38" FileAge="1436725478279" FileType="1048576" />
+      <File Name="Static_Code/PDD/TPM_PDD.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481092" FileType="1048576" />
+      <File Name="Static_Code/PDD/DAC_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480016" FileType="1048576" />
+      <File Name="Static_Code/PDD/MCM_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480375" FileType="1048576" />
+      <File Name="Static_Code/PDD/PORT_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480515" FileType="1048576" />
+      <File Name="Static_Code/PDD/SIM_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480967" FileType="1048576" />
+      <File Name="Static_Code/PDD/UART_PDD.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481108" FileType="1048576" />
+      <File Name="Static_Code/PDD/FTFA_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480125" FileType="1048576" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2015-07-12, 16:30:23" FileAge="1436729423268" FileType="45637" CompNumb="2" />
+      <File Name="Documentation/doxygen/brtos-frdm-kl25z-cw10.txt" FileDate="2015-07-12, 15:24:41" FileAge="1436725481233" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481328" FileType="45637" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.ld" FileDate="2015-07-12, 15:24:41" FileAge="1436725481186" FileType="8" CompNumb="2" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481328" FileType="45637" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481344" FileType="45637" />
+      <File Name="Static_Code/IO_Map/MKL25Z4.h" FileDate="2015-07-12, 15:24:37" FileAge="1436725477873" FileType="1048576" CompNumb="2" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2015-07-12, 15:24:41" FileAge="1436725481328" FileType="45637" />
+      <File Name="Documentation/doxygen/pex.css" FileDate="2015-07-12, 15:24:37" FileAge="1436725477526" FileType="16384" CompNumb="2" />
+      <File Name="Static_Code/PDD/I2C_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480250" FileType="1048576" />
+      <File Name="Static_Code/PDD/RTC_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480733" FileType="1048576" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>3</CodeGenReference>
+</CodeGenerationInfo>

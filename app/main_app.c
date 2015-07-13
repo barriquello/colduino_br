@@ -1,6 +1,10 @@
 #include "BRTOS.h"
-#include "drivers.h"
 #include "tasks.h"
+
+#if PROCESSOR == COLDFIRE_V1
+#include "drivers.h"
+#endif
+
 //#include "AppConfig.h"
 
 #ifdef __cplusplus
@@ -31,7 +35,9 @@ void main_app(void)
 #if 1
 
 	/* init the MCU system */
+#if PROCESSOR == COLDFIRE_V1	
 	System_Init();
+#endif
 
 	// Initialize BRTOS
 	BRTOS_Init();

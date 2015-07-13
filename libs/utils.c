@@ -1,10 +1,13 @@
 #include "BRTOS.h"
 #include "utils.h"
-#include "usb_terminal.h"
-#include "uart.h"
-
 #include <stdlib.h>
 #include <string.h>
+
+#include "usb_terminal.h"
+
+#if ENABLE_UART1 || ENABLE_UART2
+#include "uart.h"
+#endif
 
 #pragma warn_implicitconv off
 

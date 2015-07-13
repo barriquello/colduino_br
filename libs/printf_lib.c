@@ -30,7 +30,7 @@
 #include "usb_terminal.h"
 #include "printf_lib.h"
 
-#define PRINTF_BUFSIZE 512
+#define PRINTF_BUFSIZE 		16
 
 static printf_idx;
 char printf_buf[PRINTF_BUFSIZE];

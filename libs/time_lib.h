@@ -21,8 +21,11 @@
 #include "BRTOS.h"
 #include <time.h>
 
-
+#if PROCESSOR == COLDFIRE_V1
 typedef INT32U time_t;
+#elif PROCESSOR == ARM_Cortex_M0
+typedef INT32S time_t;
+#endif
 
 #if 0
 #ifndef _TM_DEFINED

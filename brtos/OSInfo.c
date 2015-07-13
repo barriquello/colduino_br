@@ -18,7 +18,7 @@ int mem_cpy(char *dst, char *src)
 	return i;
 }
 
-char *PrintDecimal(INT16S val, CHAR8 *buff)
+static char *PrintDecimal(INT16S val, CHAR8 *buff)
 {
    INT16U backup;
    INT32U i = 0;
