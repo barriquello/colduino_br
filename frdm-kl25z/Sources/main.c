@@ -30,6 +30,10 @@
 /* Including needed modules to compile this module/procedure */
 #include "Cpu.h"
 #include "Events.h"
+#include "INT_SVCall.h"
+#include "INT_PendableSrvReq.h"
+#include "INT_SysTick.h"
+#include "INT_USB0.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -119,7 +123,7 @@ int main(void)
    Mcu_Init();
    
    main_app();
-   
+  
 #if 0   
   /* call BRTOS initialization */
   	BRTOS_Init();
@@ -143,7 +147,8 @@ int main(void)
 	{
 		for(;;){};
 	}
-#endif    
+#endif	
+    
   
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/

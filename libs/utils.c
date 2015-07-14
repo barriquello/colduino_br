@@ -134,14 +134,14 @@ void IntToString(int n, char s[])
 
 char *ltoa(long N, char *str, int base)
 {
-	  #define BUFSIZE (sizeof(long) * 8 + 1)
+	  #define BUFSIZE_LTOA (sizeof(long) * 8 + 1)
  	  register int i = 2;
       long uarg;
-      char *tail, *head = str, buf[BUFSIZE];
+      char *tail, *head = str, buf[BUFSIZE_LTOA];
 
       if (36 < base || 2 > base)
             base = 10;                    /* can only use 0-9, A-Z        */
-      tail = &buf[BUFSIZE - 1];           /* last character position      */
+      tail = &buf[BUFSIZE_LTOA - 1];           /* last character position      */
       *tail-- = '\0';
 
       if (10 == base && N < 0L)

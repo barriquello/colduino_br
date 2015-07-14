@@ -3303,6 +3303,27 @@
 #define SIM_PDD_CLK_OUT5_DIVIDER_7 0x6U          /**< Divide by 7 */
 #define SIM_PDD_CLK_OUT5_DIVIDER_8 0x7U          /**< Divide by 8 */
 
+#if ((defined(MCU_MKL02Z4)) || (defined(MCU_MKL04Z4)) || (defined(MCU_MKL05Z4)))
+/* Clock sources */
+  #define SIM_PDD_UART0_DISABLE_CLOCK      0U      /**< Disable the clock. */
+  #define SIM_PDD_UART0_FLL_CLOCK          0x4000000U /**< MCG FLL clock. */
+  #define SIM_PDD_UART0_EXTERNAL_REF_CLOCK 0x8000000U /**< External reference clock. */
+  #define SIM_PDD_UART0_INTERNAL_REF_CLOCK 0xC000000U /**< Internal reference clock. */
+
+#else /* (defined(MCU_MKL14Z4)) || (defined(MCU_MKL15Z4)) || (defined(MCU_MKL16Z4)) || (defined(MCU_MKL24Z4)) || (defined(MCU_MKL25Z4)) || (defined(MCU_MKL26Z4)) || (defined(MCU_MKL34Z4)) || (defined(MCU_MKL36Z4)) || (defined(MCU_MKL46Z4)) */
+/* Clock sources */
+  #define SIM_PDD_UART0_DISABLE_CLOCK      0U      /**< Disable the clock. */
+  #define SIM_PDD_UART0_PLL_FLL_CLOCK      0x4000000U /**< MCG PLL or FLL clock. */
+  #define SIM_PDD_UART0_EXTERNAL_REF_CLOCK 0x8000000U /**< External reference clock. */
+  #define SIM_PDD_UART0_INTERNAL_REF_CLOCK 0xC000000U /**< Internal reference clock. */
+
+#endif /* (defined(MCU_MKL14Z4)) || (defined(MCU_MKL15Z4)) || (defined(MCU_MKL16Z4)) || (defined(MCU_MKL24Z4)) || (defined(MCU_MKL25Z4)) || (defined(MCU_MKL26Z4)) || (defined(MCU_MKL34Z4)) || (defined(MCU_MKL36Z4)) || (defined(MCU_MKL46Z4)) */
+/* Clock sources */
+#define SIM_PDD_LPUART1_DISABLE_CLOCK           0U /**< Disable the clock. */
+#define SIM_PDD_LPUART1_FAST_INTERNAL_REF_CLOCK 0x10000000U /**< Fast internal reference clock. */
+#define SIM_PDD_LPUART1_EXTERNAL_REF_CLOCK      0x20000000U /**< External reference clock. */
+#define SIM_PDD_LPUART1_SLOW_INTERNAL_REF_CLOCK 0x30000000U /**< Slow internal reference clock. */
+
 /* 32 kHz clock source constants */
 #define SIM_PDD_LPTMR_SYSTEM_OSCILLATOR    0U    /**< System oscillator (OSC32KCLK) */
 #define SIM_PDD_LPTMR_LOW_POWER_OSCILLATOR 0xC0000U /**< Low power oscillator 1kHz (LPO) */
@@ -4156,6 +4177,62 @@
   )
 
 /* ----------------------------------------------------------------------------
+   -- SetClockSourceUART0
+   ---------------------------------------------------------------------------- */
+
+#if ((defined(MCU_MKL02Z4)) || (defined(MCU_MKL04Z4)) || (defined(MCU_MKL05Z4)))
+/**
+ * @brief Selects the clock source (in the SIM module).
+ * @param PeripheralBase Pointer to a peripheral registers structure (peripheral
+ *        base address). You can use the constant defined in the registers
+ *        definition header file (<peripheral>_BASE_PTR) or the constant defined in
+ *        the peripheral initialization component header file
+ *        (<component_name>_DEVICE).
+ * @param Source Clock source. Possible values: DISABLE_CLOCK, FLL_CLOCK,
+ *        EXTERNAL_REF_CLOCK, INTERNAL_REF_CLOCK. This parameter is of "Clock sources"
+ *        type.
+ * @return Returns a value of void type.
+ * @remarks The macro accesses the following registers: SIM_SOPT2.
+ * @par Example:
+ *      @code
+ *      SIM_PDD_SetClockSourceUART0(<peripheral>_BASE_PTR,
+ *      SIM_PDD_UART0_DISABLE_CLOCK);
+ *      @endcode
+ */
+  #define SIM_PDD_SetClockSourceUART0(PeripheralBase, Source) ( \
+      SIM_SOPT2_REG(PeripheralBase) = \
+       (uint32_t)(( \
+        (uint32_t)(SIM_SOPT2_REG(PeripheralBase) & (uint32_t)(~(uint32_t)SIM_SOPT2_UART0SRC_MASK))) | ( \
+        (uint32_t)(Source))) \
+    )
+#else /* (defined(MCU_MKL14Z4)) || (defined(MCU_MKL15Z4)) || (defined(MCU_MKL16Z4)) || (defined(MCU_MKL24Z4)) || (defined(MCU_MKL25Z4)) || (defined(MCU_MKL26Z4)) || (defined(MCU_MKL34Z4)) || (defined(MCU_MKL36Z4)) || (defined(MCU_MKL46Z4)) */
+/**
+ * @brief Selects the clock source (in the SIM module).
+ * @param PeripheralBase Pointer to a peripheral registers structure (peripheral
+ *        base address). You can use the constant defined in the registers
+ *        definition header file (<peripheral>_BASE_PTR) or the constant defined in
+ *        the peripheral initialization component header file
+ *        (<component_name>_DEVICE).
+ * @param Source Clock source. Possible values: DISABLE_CLOCK, PLL_FLL_CLOCK,
+ *        EXTERNAL_REF_CLOCK, INTERNAL_REF_CLOCK. This parameter is of "Clock
+ *        sources" type.
+ * @return Returns a value of void type.
+ * @remarks The macro accesses the following registers: SIM_SOPT2.
+ * @par Example:
+ *      @code
+ *      SIM_PDD_SetClockSourceUART0(<peripheral>_BASE_PTR,
+ *      SIM_PDD_UART0_DISABLE_CLOCK);
+ *      @endcode
+ */
+  #define SIM_PDD_SetClockSourceUART0(PeripheralBase, Source) ( \
+      SIM_SOPT2_REG(PeripheralBase) = \
+       (uint32_t)(( \
+        (uint32_t)(SIM_SOPT2_REG(PeripheralBase) & (uint32_t)(~(uint32_t)SIM_SOPT2_UART0SRC_MASK))) | ( \
+        (uint32_t)(Source))) \
+    )
+#endif /* (defined(MCU_MKL14Z4)) || (defined(MCU_MKL15Z4)) || (defined(MCU_MKL16Z4)) || (defined(MCU_MKL24Z4)) || (defined(MCU_MKL25Z4)) || (defined(MCU_MKL26Z4)) || (defined(MCU_MKL34Z4)) || (defined(MCU_MKL36Z4)) || (defined(MCU_MKL46Z4)) */
+
+/* ----------------------------------------------------------------------------
    -- ReadSystemOption2Reg
    ---------------------------------------------------------------------------- */
 
@@ -4789,6 +4866,37 @@
 #define SIM_PDD_WriteCOPServiceReg(PeripheralBase, Value) ( \
     SIM_SRVCOP_REG(PeripheralBase) = \
      (uint32_t)(Value) \
+  )
+
+/* ----------------------------------------------------------------------------
+   -- SetClockSourceLPUART1
+   ---------------------------------------------------------------------------- */
+
+/**
+ * @brief Selects the clock source (in the SIM module).
+ * @param PeripheralBase Pointer to a peripheral registers structure (peripheral
+ *        base address). You can use the constant defined in the registers
+ *        definition header file (<peripheral>_BASE_PTR) or the constant defined in
+ *        the peripheral initialization component header file
+ *        (<component_name>_DEVICE).
+ * @param Source Clock source. Possible values: DISABLE_CLOCK,
+ *        FAST_INTERNAL_REF_CLOCK, EXTERNAL_REF_CLOCK, SLOW_INTERNAL_REF_CLOCK. This parameter is
+ *        of "Clock sources" type.
+ * @return Returns a value of void type.
+ * @remarks The macro accesses the following registers: SIM_SOPT2.
+ * @par Example:
+ *      @code
+ *      SIM_PDD_SetClockSourceLPUART1(<peripheral>_BASE_PTR,
+ *      SIM_PDD_LPUART1_DISABLE_CLOCK);
+ *      @endcode
+ */
+#define SIM_PDD_SetClockSourceLPUART1(PeripheralBase, Source) ( \
+    SIM_SOPT2_REG(PeripheralBase) = \
+     (uint32_t)(( \
+      (uint32_t)(( \
+       SIM_SOPT2_REG(PeripheralBase)) & ( \
+       (uint32_t)(~(uint32_t)SIM_SOPT2_LPUART1SRC_MASK)))) | ( \
+      (uint32_t)(Source))) \
   )
 
 /* ----------------------------------------------------------------------------

@@ -39,13 +39,13 @@
 
 /// Define the maximum number of Tasks to be Installed
 /// must always be equal or higher to NumberOfInstalledTasks
-#define NUMBER_OF_TASKS 		(INT8U)4
+#define NUMBER_OF_TASKS 		(INT8U)3
 
 /// Defines the memory allocation and deallocation function to the dynamic queues
 #define BRTOS_ALLOC   malloc
 #define BRTOS_DEALLOC free
 
-#define configMAX_TASK_NAME_LEN 	32
+#define configMAX_TASK_NAME_LEN 32
 
 /// Define if OS Trace is active
 #define OSTRACE 0
@@ -55,10 +55,10 @@
 #endif
 
 /// Define if TimerHook function is active
-#define TIMER_HOOK_EN 0
+#define TIMER_HOOK_EN 			1
 
 /// Define if IdleHook function is active
-#define IDLE_HOOK_EN 0
+#define IDLE_HOOK_EN 			0
 
 /// Enable or disable timers service
 #define BRTOS_TMR_EN           1
@@ -76,7 +76,7 @@
 #define BRTOS_QUEUE_EN         1
 
 /// Enable or disable dynamic queue controls
-#define BRTOS_DYNAMIC_QUEUE_ENABLED	1
+#define BRTOS_DYNAMIC_QUEUE_ENABLED	0
 
 /// Enable or disable queue 16 bits controls
 #define BRTOS_QUEUE_16_EN      0
@@ -90,7 +90,7 @@
 
 /// Defines the maximum number of mutexes\n
 /// Limits the memory allocation for mutex
-#define BRTOS_MAX_MUTEX        4
+#define BRTOS_MAX_MUTEX        2
 
 /// Defines the maximum number of mailboxes\n
 /// Limits the memory allocation mailboxes
@@ -98,7 +98,7 @@
 
 /// Defines the maximum number of queues\n
 /// Limits the memory allocation for queues
-#define BRTOS_MAX_QUEUE        2
+#define BRTOS_MAX_QUEUE        3
 
 
 /// TickTimer Defines
@@ -118,7 +118,7 @@
 
 
 // Stack Size of the Idle Task
-#define IDLE_STACK_SIZE             (INT16U)320
+#define IDLE_STACK_SIZE             (INT16U)384
 
 
 /// Stack Defines
@@ -127,4 +127,4 @@
 
 // Queue heap defines
 // Configurado com 256 bytes p/ filas
-#define QUEUE_HEAP_SIZE 1*64
+#define QUEUE_HEAP_SIZE 1*128

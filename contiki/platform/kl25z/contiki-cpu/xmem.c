@@ -39,7 +39,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define XMEM_SIZE  1024 * 1024
+#define XMEM_SIZE  128
 
 static unsigned char xmem[XMEM_SIZE];
 /*---------------------------------------------------------------------------*/

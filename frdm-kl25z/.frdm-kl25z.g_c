@@ -1,7 +1,7 @@
 <GenerationInfo_G_C>
   <Options>
-    <ProjectName>brtos-frdm-kl25z-cw10</ProjectName>
-    <ProjectDirectory>C:\Users\Universidade Federal\workspace_cw10p6\brtos-frdm-kl25z-cw10\</ProjectDirectory>
+    <ProjectName>frdm-kl25z</ProjectName>
+    <ProjectDirectory>C:\DADOS_LOCAIS\GITHUB\colduino_br\frdm-kl25z\</ProjectDirectory>
     <ProjectMainModuleName>main</ProjectMainModuleName>
     <DestEventsDirectory>Sources\</DestEventsDirectory>
     <DestDriversSubDirectory>..\Generated_Code\</DestDriversSubDirectory>
@@ -18,20 +18,20 @@
         <Line>PE_Const</Line>
         <Line>IO_Map</Line>
       </GenSharedModules>
-      <ShrdHeaderAge0>1189903124</ShrdHeaderAge0>
+      <ShrdHeaderAge0>1190022722</ShrdHeaderAge0>
       <ShrdCodeAge0>-1</ShrdCodeAge0>
       <ShrdAsemblAge0>-1</ShrdAsemblAge0>
-      <ShrdHeaderAge1>1189903124</ShrdHeaderAge1>
+      <ShrdHeaderAge1>1190022722</ShrdHeaderAge1>
       <ShrdCodeAge1>-1</ShrdCodeAge1>
       <ShrdAsemblAge1>-1</ShrdAsemblAge1>
-      <ShrdHeaderAge2>1189903124</ShrdHeaderAge2>
+      <ShrdHeaderAge2>1190022722</ShrdHeaderAge2>
       <ShrdCodeAge2>-1</ShrdCodeAge2>
       <ShrdAsemblAge2>-1</ShrdAsemblAge2>
-      <ShrdHeaderAge3>1189903124</ShrdHeaderAge3>
+      <ShrdHeaderAge3>1190022722</ShrdHeaderAge3>
       <ShrdCodeAge3>-1</ShrdCodeAge3>
       <ShrdAsemblAge3>-1</ShrdAsemblAge3>
       <GenExtraFiles lines_count="9">
-        <Line>Documentation\doxygen\brtos-frdm-kl25z-cw10.txt</Line>
+        <Line>Documentation\doxygen\frdm-kl25z.txt</Line>
         <Line>Documentation\doxygen\RoutingReport.txt</Line>
         <Line>Documentation\doxygen\pex.doxyfile</Line>
         <Line>Documentation\doxygen\pex.css</Line>
@@ -42,9 +42,9 @@
         <Line>Generated_Code\Vectors.c</Line>
       </GenExtraFiles>
       <GenExtraFileSrcDir3>lib\doxygen\</GenExtraFileSrcDir3>
-      <XtraAge5>1189903124</XtraAge5>
-      <XtraAge6>1190021233</XtraAge6>
-      <XtraAge8>1190021233</XtraAge8>
+      <XtraAge5>1190022722</XtraAge5>
+      <XtraAge6>1190022722</XtraAge6>
+      <XtraAge8>1190022722</XtraAge8>
       <GenExtraFileType8>4</GenExtraFileType8>
       <GenExtraFileType7>4</GenExtraFileType7>
       <GenExtraFileType6>4</GenExtraFileType6>
@@ -200,6 +200,15 @@
         <NotCreatedByDefault>false</NotCreatedByDefault>
       </SynchronizedStaticFile>
       <SynchronizedStaticFile>
+        <SrcFileName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\SIM_PDD.h</SrcFileName>
+        <OrigSrcFileHash>A61561AA4BDBA2C6DC71DC23DDFB1A960C2B4B6FD487F56DC777A2E8B61A047E0EDC14D9723E20DAA75AE39B8A52332A9D37EEB1E5AEFCB5D5F11B04CC452B75</OrigSrcFileHash>
+        <ReviewedSrcFileHash>A61561AA4BDBA2C6DC71DC23DDFB1A960C2B4B6FD487F56DC777A2E8B61A047E0EDC14D9723E20DAA75AE39B8A52332A9D37EEB1E5AEFCB5D5F11B04CC452B75</ReviewedSrcFileHash>
+        <PrjFileName>Static_Code\PDD\SIM_PDD.h</PrjFileName>
+        <PrjFileHash>A61561AA4BDBA2C6DC71DC23DDFB1A960C2B4B6FD487F56DC777A2E8B61A047E0EDC14D9723E20DAA75AE39B8A52332A9D37EEB1E5AEFCB5D5F11B04CC452B75</PrjFileHash>
+        <NoMoreGenerated>false</NoMoreGenerated>
+        <NotCreatedByDefault>false</NotCreatedByDefault>
+      </SynchronizedStaticFile>
+      <SynchronizedStaticFile>
         <SrcFileName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\SPI_PDD.h</SrcFileName>
         <OrigSrcFileHash>9AA57D479C3DD2F9BE60DA6B469AA8E9EC45BB659CEDD59E9531237C9D20C4837F69255643D7D834E216E5CECE9B1A0E79E5543688ED51C618818ACA7DA3E0C4</OrigSrcFileHash>
         <ReviewedSrcFileHash>9AA57D479C3DD2F9BE60DA6B469AA8E9EC45BB659CEDD59E9531237C9D20C4837F69255643D7D834E216E5CECE9B1A0E79E5543688ED51C618818ACA7DA3E0C4</ReviewedSrcFileHash>
@@ -279,9 +288,9 @@
         <Line>INT_USB0</Line>
       </GenBeanModules>
     </GenFiles>
-    <SignalListFile>Documentation\brtos-frdm-kl25z-cw10_SIGNALS.txt</SignalListFile>
+    <SignalListFile>Documentation\frdm-kl25z_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>6</ProjectModificationStamp>
+    <ProjectModificationStamp>8</ProjectModificationStamp>
   </Options>
   <CpuID_2>
     <Generated>true</Generated>
@@ -289,8 +298,8 @@
     <GenComponentVersion>01.025</GenComponentVersion>
     <GenDriverVersion>01.04</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1189903124</HeaderAge>
-    <CodeAge>1190021233</CodeAge>
+    <HeaderAge>1190022722</HeaderAge>
+    <CodeAge>1190022722</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>11</GenNumMethods>
     <SetClockConfiguration>false</SetClockConfiguration>
@@ -343,7 +352,7 @@
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
     <GenExtraFilesCount>11</GenExtraFilesCount>
-    <ExtraFile0>Documentation\doxygen\brtos-frdm-kl25z-cw10.txt</ExtraFile0>
+    <ExtraFile0>Documentation\doxygen\frdm-kl25z.txt</ExtraFile0>
     <ExtraFile1>Documentation\doxygen\RoutingReport.txt</ExtraFile1>
     <ExtraFile2>Documentation\doxygen\pex.doxyfile</ExtraFile2>
     <ExtraFile3>Documentation\doxygen\pex.css</ExtraFile3>
@@ -361,8 +370,8 @@
     <GenComponentVersion>02.023</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1190021233</HeaderAge>
-    <CodeAge>1190021233</CodeAge>
+    <HeaderAge>1190022722</HeaderAge>
+    <CodeAge>1190022722</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>0</GenNumMethods>
     <GenNumEvents>0</GenNumEvents>
@@ -379,8 +388,8 @@
     <GenComponentVersion>02.023</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1190021233</HeaderAge>
-    <CodeAge>1190021233</CodeAge>
+    <HeaderAge>1190022722</HeaderAge>
+    <CodeAge>1190022722</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>0</GenNumMethods>
     <GenNumEvents>0</GenNumEvents>
@@ -397,8 +406,8 @@
     <GenComponentVersion>02.023</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1190021233</HeaderAge>
-    <CodeAge>1190021233</CodeAge>
+    <HeaderAge>1190022722</HeaderAge>
+    <CodeAge>1190022722</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>0</GenNumMethods>
     <GenNumEvents>0</GenNumEvents>
@@ -415,8 +424,8 @@
     <GenComponentVersion>02.023</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1190021233</HeaderAge>
-    <CodeAge>1190021233</CodeAge>
+    <HeaderAge>1190022722</HeaderAge>
+    <CodeAge>1190022722</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>0</GenNumMethods>
     <GenNumEvents>0</GenNumEvents>

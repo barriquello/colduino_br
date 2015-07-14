@@ -49,7 +49,7 @@ typedef unsigned short uip_stats_t;
 
 #define NETSTACK_CONF_WITH_IPV6		  1
 
-#define UIP_CONF_UDP                  1
+#define UIP_CONF_UDP                  0
 #define UIP_CONF_TCP                  1
 
 #define LINKADDR_CONF_SIZE              8
@@ -77,23 +77,24 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_IPV6_CHECKS          1
 #define UIP_CONF_IPV6_REASSEMBLY      1
 //#define UIP_CONF_NETIF_MAX_ADDRESSES  5
-#define NBR_TABLE_CONF_MAX_NEIGHBORS     8
+#define NBR_TABLE_CONF_MAX_NEIGHBORS    6
 #define UIP_CONF_DS6_DEFRT_NBU   		2
-#define UIP_CONF_DS6_PREFIX_NBU  		5
-#define UIP_CONF_MAX_ROUTES   			2
-#define UIP_CONF_DS6_ADDR_NBU    		10
+#define UIP_CONF_DS6_PREFIX_NBU  		3
+#define UIP_CONF_MAX_ROUTES   			4
+#define UIP_CONF_DS6_ADDR_NBU    		4
 #define UIP_CONF_DS6_MADDR_NBU   		0
 #define UIP_CONF_DS6_AADDR_NBU   		0
+//#define NETSTACK_CONF_NETWORK			sicslowpan_driver
 #else
 #define UIP_CONF_IP_FORWARD          1
 #endif /* NETSTACK_CONF_WITH_IPV6 */
 
-#define MMEM_CONF_SIZE	1024
+#define MMEM_CONF_SIZE			   256
 #define IP64_ADDRMAP_CONF_ENTRIES  8
-#define PROCESS_CONF_NUMEVENTS	   8
+#define PROCESS_CONF_NUMEVENTS	   10
 
 #undef HARD_CODED_ADDRESS
-#define HARD_CODED_ADDRESS            "bbbb::1" //bbbb::ff:fe00:1 is the RPL border router default
+#define HARD_CODED_ADDRESS            "aaaa::1" //aaaa::ff:fe00:1 is the RPL border router default
 
 #define RESOLV_CONF_SUPPORTS_MDNS              0
 #define RESOLV_CONF_SUPPORTS_RECORD_EXPIRATION 0

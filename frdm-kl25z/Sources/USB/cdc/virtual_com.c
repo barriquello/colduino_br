@@ -230,9 +230,7 @@ static void USB_App_Callback (
         {
 			if (OSQueuePost(USB, dp_rcv->data_ptr[index]) == BUFFER_UNDERRUN)
 			{
-			  // Problema: Estouro de buffer
-			  // Novas teclas n�o ser�o armazenadas at� que o buffer tenha espa�o dispon�vel novamente
-			  //OSCleanQueue(USB);
+			  //OSCleanQueue(USB);				
 			}
         }
     }
@@ -284,7 +282,7 @@ static void USB_Notify_Callback (
         if(event_type == USB_APP_CDC_CARRIER_ACTIVATED)
         {
             start_transactions = TRUE;
-            echo ("BRTOS Started!", FALSE);
+            //echo ("BRTOS Started!", FALSE);
         }
         else if(event_type == USB_APP_CDC_CARRIER_DEACTIVATED)
         {

@@ -324,8 +324,8 @@ void terminal_process(void)
   {
 #if USB_DEMO	  
 	(void)OSQueuePend(USB, &data, 0);
-#endif	
-    c=(char)data;
+	 c=(char)data;
+#endif	   
     
     if ((c != '\n') && (c != '\r'))
     {

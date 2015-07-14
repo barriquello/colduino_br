@@ -34,6 +34,10 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
+#include "INT_SVCall.h"
+#include "INT_PendableSrvReq.h"
+#include "INT_SysTick.h"
+#include "INT_USB0.h"
 
 #ifdef __cplusplus
 extern "C" {
