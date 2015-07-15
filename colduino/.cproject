@@ -236,7 +236,7 @@
 									<listOptionValue builtIn="false" value="contiki/examples/rpl-border-router/httpd-simple.c"/>
 									<listOptionValue builtIn="false" value="contiki/examples/rpl-border-router/slip-bridge.c"/>
 								</option>
-								<option id="com.freescale.coldfire.toolchain.linker.base.generateSrec.length.977676224" superClass="com.freescale.coldfire.toolchain.linker.base.generateSrec.length" value="64" valueType="string"/>
+								<option id="com.freescale.coldfire.toolchain.linker.base.generateSrec.length.977676224" name="Max S-Record Length" superClass="com.freescale.coldfire.toolchain.linker.base.generateSrec.length" value="64" valueType="string"/>
 								<inputType id="com.freescale.coldfire.toolchain.linker.base.input.1991355322" name="Linker Input" superClass="com.freescale.coldfire.toolchain.linker.base.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -315,7 +315,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="CodeWarrior_CFV1"/>
 						<entry excluding="option" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FatFs"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="app"/>
-						<entry excluding="platform/kl25z|contiki-apps/webserver|contiki-compat/net/ipv4|contiki-compat/net/ipv4/uip-over-mesh.h|contiki-compat/net/ipv4/uip-over-mesh.c|contiki-compat/net/ipv4/uip-neighbor.h|contiki-compat/net/ipv4/uip-neighbor.c|contiki-compat/net/ipv4/uip-fw-drv.h|contiki-compat/net/ipv4/uip-fw-drv.c|contiki-compat/net/ipv4/uip-fw.h|contiki-compat/net/ipv4/uip-fw.c|contiki-compat/net/ipv4/uip.c|contiki-compat/net/ipv4/uip_arp.h|contiki-compat/net/ipv4/uip_arp.c|contiki-compat/net/ipv4/uaodv-rt.h|contiki-compat/net/ipv4/uaodv-rt.c|contiki-compat/net/ipv4/uaodv-def.h|contiki-compat/net/ipv4/uaodv.h|contiki-compat/net/ipv4/uaodv.c|contiki-apps/webserver/httpd-cfs.c|contiki-apps/webserver/webserver-dsc.h|contiki-apps/webserver/webserver-dsc.c|contiki-apps/webserver/webserver.h|contiki-apps/webserver/webserver.c|contiki-compat/net/http-socket/http-socket.c|contiki-compat/net/ip64" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="contiki"/>
+						<entry excluding="contiki-apps/webserver|platform/kl25z|contiki-compat/net/ipv4|contiki-compat/net/ipv4/uip-over-mesh.h|contiki-compat/net/ipv4/uip-over-mesh.c|contiki-compat/net/ipv4/uip-neighbor.h|contiki-compat/net/ipv4/uip-neighbor.c|contiki-compat/net/ipv4/uip-fw-drv.h|contiki-compat/net/ipv4/uip-fw-drv.c|contiki-compat/net/ipv4/uip-fw.h|contiki-compat/net/ipv4/uip-fw.c|contiki-compat/net/ipv4/uip.c|contiki-compat/net/ipv4/uip_arp.h|contiki-compat/net/ipv4/uip_arp.c|contiki-compat/net/ipv4/uaodv-rt.h|contiki-compat/net/ipv4/uaodv-rt.c|contiki-compat/net/ipv4/uaodv-def.h|contiki-compat/net/ipv4/uaodv.h|contiki-compat/net/ipv4/uaodv.c|contiki-apps/webserver/httpd-cfs.c|contiki-apps/webserver/webserver-dsc.h|contiki-apps/webserver/webserver-dsc.c|contiki-apps/webserver/webserver.h|contiki-apps/webserver/webserver.c|contiki-compat/net/http-socket/http-socket.c|contiki-compat/net/ip64" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="contiki"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="devices"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="libs"/>
 					</sourceEntries>

@@ -60,7 +60,7 @@ static uint8_t prefix_set;
 
 PROCESS(border_router_process, "Border router process");
 
-#define WEBSERVER	0
+#define WEBSERVER	1
 
 #if WEBSERVER==0
 /* No webserver */
@@ -365,10 +365,7 @@ PROCESS_THREAD(border_router_process, ev, data)
   /* Request prefix until it has been received */
   while(!prefix_set) {
     etimer_set(&et, CLOCK_SECOND);
-    if(GetStart_transactions() == TRUE)
-    {
-    	request_prefix();
-    }
+    request_prefix();
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
   }
 

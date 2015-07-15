@@ -45,6 +45,10 @@ slip_arch_init(unsigned long ubr)
 void
 slip_arch_writeb(unsigned char c)
 {
+	while(GetStart_transactions() == FALSE)
+	{
+		DelayTask(1000);
+	}
 	while(cdc_putch(c) != c)
 	{
 		//DelayTask(1);
