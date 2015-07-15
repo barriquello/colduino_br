@@ -47,7 +47,7 @@ slip_arch_writeb(unsigned char c)
 {
 	while(cdc_putch(c) != c)
 	{
-		DelayTask(1);
+		//DelayTask(1);
 	}
 	//cdc_process();
 	

@@ -74,13 +74,13 @@ PROCESS_THREAD(ctimer_process, ev, data)
     PROCESS_YIELD_UNTIL(ev == PROCESS_EVENT_TIMER);
     for(c = list_head(ctimer_list); c != NULL; c = c->next) {
       if(&c->etimer == data) {
-	list_remove(ctimer_list, c);
-	PROCESS_CONTEXT_BEGIN(c->p);
-	if(c->f != NULL) {
-	  c->f(c->ptr);
-	}
-	PROCESS_CONTEXT_END(c->p);
-	break;
+		list_remove(ctimer_list, c);
+		PROCESS_CONTEXT_BEGIN(c->p);
+		if(c->f != NULL) {
+		  c->f(c->ptr);
+		}
+		PROCESS_CONTEXT_END(c->p);
+		break;
       }
     }
   }

@@ -224,10 +224,13 @@ unsigned char cdc_putch(char c)
   if (g_send_size < sizeof(g_curr_send_buf))
   {
 	g_curr_send_buf[g_send_size++]=(unsigned char)c;
+	
+#if 0	
     if (c == '\r')
     {
       cdc_process();
     }	
+#endif    
   }
   else
   {
@@ -290,10 +293,12 @@ static void USB_App_Callback (
 				//{
 					if (OSQueuePost(USB, dp_rcv->data_ptr[index]) == BUFFER_UNDERRUN)
 					{
-					  // Buffer overflow 					
+					  // Buffer overflow 		
+#if ENABLE_BUF_OVF_ERR
 					   while(1){
 						   __RESET_WATCHDOG();
 					   }
+#endif					   
 					}
 				//}
 			}

@@ -369,22 +369,48 @@ main_minimal_net(void)
 
     int n;
     char c;
+    INT8U ret,poll;
     clock_time_t next_event;
 
-    n = process_run();
-    next_event = etimer_next_expiration_time() - clock_time();
-
-    if(next_event > (CLOCK_SECOND * 2))
-    	next_event = CLOCK_SECOND * 2;
-
-     //DelayTask((INT16U)next_event);
-     
-#if 1     
-     
-     while(OSQueuePend(USB, &c, (INT16U)next_event) != TIMEOUT)
-     {
-    	 slip_input_byte(c);
-     }     
+    do{
+    	n = process_run();
+    } while(n > 0);
+    
+         
+#if 1    
+     poll = 0;
+     next_event = 2;
+     do 
+     {    
+    	 wait_next_event:
+    	 ret = OSQueuePend(USB, &c, (INT16U)next_event);    	 
+    	 if(ret != TIMEOUT) 
+		 {
+    		 poll = 1;
+    		 if(slip_input_byte(c) == 1)
+			 {
+				 break;
+			 }
+    		 
+		 }else
+		 {
+			 if(!poll)
+			 {
+				 next_event = etimer_next_expiration_time() - clock_time();
+				 if(next_event > (CLOCK_SECOND >> 1))
+				 {
+				     	next_event = CLOCK_SECOND >> 1;
+				 }
+				 if(((INT16U)next_event > 2))
+				 {				 
+					next_event = next_event - 2;
+					goto wait_next_event;
+				 }
+			 }
+			 break;
+		 }
+    	    	 
+     }while(1);     
 #endif     
      
      etimer_request_poll();
