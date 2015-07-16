@@ -52,20 +52,20 @@
       <File Name="Static_Code/PDD/USB_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480000" FileType="1048576" />
       <File Name="Generated_Code/PE_LDD.h" FileDate="2015-07-14, 09:50:04" FileAge="1436878204794" FileType="45637" CompNumb="2" />
       <File Name="Static_Code/PDD/COP_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480000" FileType="1048576" />
-      <File Name="Static_Code/IO_Map/MKL25Z4.h" FileDate="2015-07-12, 15:24:36" FileAge="1436725476000" FileType="1048576" CompNumb="2" />
       <File Name="Generated_Code/PE_LDD.c" FileDate="2015-07-14, 09:50:04" FileAge="1436878204821" FileType="45637" CompNumb="2" />
+      <File Name="Static_Code/IO_Map/MKL25Z4.h" FileDate="2015-07-12, 15:24:36" FileAge="1436725476000" FileType="1048576" CompNumb="2" />
       <File Name="Static_Code/PDD/PIT_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480000" FileType="1048576" />
       <File Name="Documentation/doxygen/pex.doxyfile" FileDate="2015-07-14, 09:50:05" FileAge="1436878205249" FileType="45637" CompNumb="2" />
       <File Name="Static_Code/PDD/LPTMR_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480000" FileType="1048576" />
       <File Name="Static_Code/PDD/DMA_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480000" FileType="1048576" />
       <File Name="Static_Code/PDD/GPIO_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480000" FileType="1048576" />
       <File Name="Static_Code/PDD/ADC_PDD.h" FileDate="2015-07-12, 15:24:38" FileAge="1436725478000" FileType="1048576" />
-      <File Name="Documentation/frdm-kl25z_SIGNALS.txt" FileDate="2015-07-14, 13:07:29" FileAge="1436890049410" FileType="3072" />
       <File Name="Documentation/frdm-kl25z.txt" FileDate="2015-07-14, 09:50:15" FileAge="1436878215910" FileType="3072" />
+      <File Name="Documentation/frdm-kl25z_SIGNALS.txt" FileDate="2015-07-16, 09:40:45" FileAge="1437050445006" FileType="3072" />
       <File Name="Generated_Code/INT_USB0.h" FileDate="2015-07-14, 09:50:05" FileAge="1436878205082" FileType="45637" CompNumb="13" />
       <File Name="Documentation/frdm-kl25z_Settings.xml" FileDate="2015-07-14, 10:11:32" FileAge="1436879492391" FileType="3072" />
       <File Name="Static_Code/PDD/DAC_PDD.h" FileDate="2015-07-12, 15:24:40" FileAge="1436725480000" FileType="1048576" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>7</CodeGenReference>
+  <CodeGenReference>8</CodeGenReference>
 </CodeGenerationInfo>

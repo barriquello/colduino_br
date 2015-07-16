@@ -49,7 +49,7 @@ typedef unsigned short uip_stats_t;
 
 #define NETSTACK_CONF_WITH_IPV6		  1
 
-#define UIP_CONF_UDP                  1
+#define UIP_CONF_UDP                  1 //changed
 #define UIP_CONF_TCP                  1
 
 #define LINKADDR_CONF_SIZE              8
@@ -62,11 +62,17 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_ROUTER                 1 
 #endif
 
-#define UIP_CONF_MAX_LISTENPORTS      4
-#define UIP_CONF_MAX_CONNECTIONS      4
-#define UIP_CONF_BYTE_ORDER           UIP_BIG_ENDIAN //UIP_LITTLE_ENDIAN //UIP_BIG_ENDIAN
+#define UIP_CONF_MAX_LISTENPORTS      2
+#define UIP_CONF_MAX_CONNECTIONS      1
 
-#define UIP_CONF_BUFFER_SIZE          1514
+#if PROCESSOR == COLDFIRE_V1		
+#define UIP_CONF_BYTE_ORDER           UIP_BIG_ENDIAN
+#elif PROCESSOR == ARM_Cortex_M0	
+#define UIP_CONF_BYTE_ORDER           UIP_LITTLE_ENDIAN
+#endif		
+
+
+#define UIP_CONF_BUFFER_SIZE          1514 //1280
 #define UIP_CONF_TCP_SPLIT            0
 #define UIP_CONF_LOGGING              1
 #define UIP_CONF_IP_FORWARD           0
@@ -77,27 +83,31 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_IPV6_CHECKS          1
 #define UIP_CONF_IPV6_REASSEMBLY      1
 //#define UIP_CONF_NETIF_MAX_ADDRESSES  5
-#define NBR_TABLE_CONF_MAX_NEIGHBORS     20
+#define NBR_TABLE_CONF_MAX_NEIGHBORS    6
 #define UIP_CONF_DS6_DEFRT_NBU   		2
-#define UIP_CONF_DS6_PREFIX_NBU  		5
-#define UIP_CONF_MAX_ROUTES   			10
-#define UIP_CONF_DS6_ADDR_NBU    		10
+#define UIP_CONF_DS6_PREFIX_NBU  		3
+#define UIP_CONF_MAX_ROUTES   			4
+#define UIP_CONF_DS6_ADDR_NBU    		4
 #define UIP_CONF_DS6_MADDR_NBU   		0
 #define UIP_CONF_DS6_AADDR_NBU   		0
+//#define NETSTACK_CONF_NETWORK			sicslowpan_driver
 #else
 #define UIP_CONF_IP_FORWARD          1
 #endif /* NETSTACK_CONF_WITH_IPV6 */
 
+#define MMEM_CONF_SIZE			   256
+//#define IP64_ADDRMAP_CONF_ENTRIES  8
+//#define PROCESS_CONF_NUMEVENTS	   10
 
 #undef HARD_CODED_ADDRESS
-#define HARD_CODED_ADDRESS            "bbbb::1" //bbbb::ff:fe00:1 is the RPL border router default
+#define HARD_CODED_ADDRESS            "aaaa::1" //aaaa::ff:fe00:1 is the RPL border router default
 
 #define RESOLV_CONF_SUPPORTS_MDNS              0
 #define RESOLV_CONF_SUPPORTS_RECORD_EXPIRATION 0
 
 #include <ctype.h>
 
-#define XMEM_ERASE_UNIT_SIZE (64*1024L)
+//#define XMEM_ERASE_UNIT_SIZE (64*1024L)
 
 
 #if NETSTACK_CONF_WITH_IPV6
@@ -107,7 +117,7 @@ typedef unsigned short uip_stats_t;
  * The existing turorials use an ipv4 address, so we leave that as the default.
  * Non-windows builds don't use this define.
  */
-//#define WPCAP_INTERFACE_ADDRESS    "fdfd::1"  //10.10.10.10 is the default (even for ipv6)
+#define WPCAP_INTERFACE_ADDRESS    "fdfd::1"  //10.10.10.10 is the default (even for ipv6)
 
 /* Minimal-net gets a 6 byte ethernet MAC assigned in uip.c, currently {0x00,0x06,0x98,0x00,0x02,0x32}
  * This gets converted to a link layer address of [fe80::206:98ff:fe00:232]
@@ -196,7 +206,5 @@ int strcasecmp(const char*, const char*);
 #if PROJECT_CONF_H
 #include "project-conf.h"
 #endif /* PROJECT_CONF_H */
-
-
 
 #endif /* CONTIKI_CONF_H_ */

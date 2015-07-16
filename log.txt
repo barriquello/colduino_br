@@ -3,12 +3,3 @@ removido:
 echo ("BRTOS Started!", FALSE) @ virtual_com.c
 
 if (dp_rcv->data_ptr[index] != 0)  @ virtual_com.c
-
-
-adicionado:
-
-if(GetStart_transactions() == TRUE)
-    {
-    	request_prefix();
-    }
-@ border-router.c

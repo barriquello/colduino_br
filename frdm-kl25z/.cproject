@@ -71,9 +71,9 @@
 									<listOptionValue builtIn="false" value="../../contiki/contiki-compat/sys"/>
 									<listOptionValue builtIn="false" value="../../contiki/contiki-compat/"/>
 									<listOptionValue builtIn="false" value="../../contiki/examples/rpl-border-router"/>
-									<listOptionValue builtIn="false" value="../../contiki/platform/kl25z/contiki-cpu"/>
-									<listOptionValue builtIn="false" value="../../contiki/platform/kl25z/"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs&quot;"/>
+									<listOptionValue builtIn="false" value="../../contiki/platform/brtos/cpu"/>
+									<listOptionValue builtIn="false" value="../../contiki/platform/brtos"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.functionsections.1254622906" name="Function sections (-ffunction-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.functionsections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections.1515179762" name="Data sections (-fdata-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections" value="true" valueType="boolean"/>
@@ -327,7 +327,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="GCC_CORTEX-M0"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="app"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="brtos"/>
-						<entry excluding="contiki-apps/webserver|contiki-compat/net/ipv4|platform/cfv1|contiki-apps/webserver/webserver-dsc.c|contiki-apps/webserver/webserver.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="contiki"/>
+						<entry excluding="platform/kl25z|contiki-apps/webserver|contiki-compat/net/ipv4|platform/cfv1|contiki-apps/webserver/webserver-dsc.c|contiki-apps/webserver/webserver.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="contiki"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="libs"/>
 					</sourceEntries>
 				</configuration>
