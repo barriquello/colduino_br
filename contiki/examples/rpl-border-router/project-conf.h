@@ -36,7 +36,7 @@
 #endif
 
 #ifndef QUEUEBUF_CONF_NUM
-#define QUEUEBUF_CONF_NUM          2
+#define QUEUEBUF_CONF_NUM          4
 #endif
 
 #ifndef UIP_CONF_BUFFER_SIZE
@@ -44,7 +44,7 @@
 #endif
 
 #ifndef UIP_CONF_RECEIVE_WINDOW
-#define UIP_CONF_RECEIVE_WINDOW  60
+#define UIP_CONF_RECEIVE_WINDOW  1000 //60
 #endif
 
 #ifndef WEBSERVER_CONF_CFS_CONNS

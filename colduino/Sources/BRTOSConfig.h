@@ -106,4 +106,4 @@
 
 // Queue heap defines
 // Configurado com 2KB p/ filas
-#define QUEUE_HEAP_SIZE 8*128
+#define QUEUE_HEAP_SIZE 12*128

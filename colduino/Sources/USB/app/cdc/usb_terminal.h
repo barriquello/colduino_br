@@ -12,7 +12,7 @@ extern "C" {
 #endif
 
 #include "terminal.h"
-#define CONSOLE_BUFFER_SIZE  (1024)
+#define CONSOLE_BUFFER_SIZE  (64)
 
 int usb_skipp_space(char *usb_cmd_line, int start);
 int usb_find_word(char *usb_cmd_line, int start);

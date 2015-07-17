@@ -33,9 +33,11 @@
 /******************************************************************************
  * Macro's
  *****************************************************************************/
-#define  CONTROLLER_ID      (0)   /* ID to identify USB CONTROLLER */ 
+#define   CONTROLLER_ID      (0)   /* ID to identify USB CONTROLLER */ 
 
-#define  KBI_STAT_MASK      (0x0F)
+#define   KBI_STAT_MASK      (0x0F)
+
+#define   USB_BUFFER_SIZE  (1536)
 
 /* 
    DATA_BUFF_SIZE should be greater than or equal to the endpoint buffer size, 
