@@ -330,6 +330,8 @@ sprint_ip6(uip_ip6addr_t addr)
 
 const linkaddr_t addr = {{0x00,0x00,0x00,0x06,0x98,0x00,0x02,0x32}};
 
+volatile INT8U packets = 0;
+
 int
 main_minimal_net(void)
 {
@@ -371,6 +373,7 @@ main_minimal_net(void)
     char c;
     INT8U ret,poll;
     clock_time_t next_event;
+    
 
     do{
     	n = process_run();
@@ -388,6 +391,15 @@ main_minimal_net(void)
 		 {
     		 poll = 1;
     		 if(slip_input_byte(c) == 1)
+    		 {
+    			 packets++;
+    			 if(slip_twopackets > 0)
+				 {
+    				 
+				 }
+    			 break;
+    		 }
+    		 if(slip_twopackets > 0)
 			 {
 				 break;
 			 }

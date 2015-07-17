@@ -26,7 +26,7 @@ char* strdup(const char*);
 CCIF void debug_printf(char *format, ...);
 
 typedef unsigned long long clock_time_t;
-#define CLOCK_CONF_SECOND 	1000
+#define CLOCK_CONF_SECOND 	(1000)
 #define INFINITE_TIME 	 	ULONG_MAX
 
 
