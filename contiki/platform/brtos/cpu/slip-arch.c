@@ -46,6 +46,8 @@ slip_arch_init(unsigned long ubr)
 #endif    	    
 }
 
+#define SLIP_END     0300
+
 /*-----------------------------------------------------------------------------------*/
 void
 slip_arch_writeb(unsigned char c)
@@ -57,6 +59,10 @@ slip_arch_writeb(unsigned char c)
 	while(cdc_putch(c) != c)
 	{
 		//DelayTask(1);
+	}
+	if (c==SLIP_END)
+	{
+		cdc_process();
 	}
 	
 }

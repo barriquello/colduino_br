@@ -33,6 +33,8 @@
 #include "dev/watchdog.h"
 #include <stdlib.h>
 
+/* watchdog is fed by BRTOS kernel, and not implemented here */
+
 /*---------------------------------------------------------------------------*/
 void
 watchdog_init(void)
