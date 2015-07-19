@@ -3,3 +3,10 @@ removido:
 echo ("BRTOS Started!", FALSE) @ virtual_com.c
 
 if (dp_rcv->data_ptr[index] != 0)  @ virtual_com.c
+
+alterado:
+
+    //char buf[hdr.log_record_size == 0 ? COFFEE_PAGE_SIZE : hdr.log_record_size];
+    char buf[COFFEE_PAGE_SIZE];
+@ cfs-coffee.c
+

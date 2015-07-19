@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008, Swedish Institute of Computer Science
+ * Copyright (c) 2005, Swedish Institute of Computer Science
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,49 +30,53 @@
  *
  */
 
-/**
- * \file
- *	Coffee architecture-dependent header for the native platform.
- * \author
- * 	Nicolas Tsiftes <nvt@sics.se>
- */
+#include "symtab.h"
 
-#ifndef CFS_COFFEE_ARCH_H
-#define CFS_COFFEE_ARCH_H
+#include "loader/symbols.h"
 
-#include "contiki-conf.h"
-#include "dev/xmem.h"
+#include <string.h>
 
-#define COFFEE_SECTOR_SIZE		65536UL
-#define COFFEE_PAGE_SIZE		(256)
-#define COFFEE_START			0
-#define COFFEE_SIZE				((1024UL * 1024UL) - COFFEE_START)
-#define COFFEE_NAME_LENGTH		16
-#define COFFEE_DYN_SIZE			16384
-#define COFFEE_MAX_OPEN_FILES	6
-#define COFFEE_FD_SET_SIZE		8
-#define COFFEE_LOG_DIVISOR		4
-#define COFFEE_LOG_SIZE			8192
-#define COFFEE_LOG_TABLE_LIMIT	256
-#define COFFEE_MICRO_LOGS		0
-#define COFFEE_IO_SEMANTICS		1
+/* Binary search is twice as large but still small. */
+#ifndef SYMTAB_CONF_BINARY_SEARCH
+#define SYMTAB_CONF_BINARY_SEARCH 1
+#endif
 
-#define COFFEE_WRITE(buf, size, offset)				\
-		xmem_pwrite((char *)(buf), (size), COFFEE_START + (offset))
+/*---------------------------------------------------------------------------*/
+#if SYMTAB_CONF_BINARY_SEARCH
+void *
+symtab_lookup(const char *name)
+{
+  int start, middle, end;
+  int r;
+  
+  start = 0;
+  end = symbols_nelts - 1;	/* Last entry is { 0, 0 }. */
 
-#define COFFEE_READ(buf, size, offset)				\
-  		xmem_pread((char *)(buf), (size), COFFEE_START + (offset))
-
-#define COFFEE_ERASE(sector)					\
-  		xmem_erase(COFFEE_SECTOR_SIZE, COFFEE_START + (sector) * COFFEE_SECTOR_SIZE)
-
-#define READ_HEADER(hdr, page)						\
-  COFFEE_READ((hdr), sizeof (*hdr), (page) * COFFEE_PAGE_SIZE)
-
-#define WRITE_HEADER(hdr, page)						\
-  COFFEE_WRITE((hdr), sizeof (*hdr), (page) * COFFEE_PAGE_SIZE)
-
-/* Coffee types. */
-typedef int16_t coffee_page_t;
-
-#endif /* !COFFEE_ARCH_H */
+  while(start <= end) {
+    /* Check middle, divide */
+    middle = (start + end) / 2;
+    r = strcmp(name, symbols[middle].name);
+    if(r < 0) {
+      end = middle - 1;
+    } else if(r > 0) {
+      start = middle + 1;
+    } else {
+      return symbols[middle].value;   
+    }
+  }
+  return NULL;
+}
+#else /* SYMTAB_CONF_BINARY_SEARCH */
+void *
+symtab_lookup(const char *name)
+{
+  const struct symbols *s;
+  for(s = symbols; s->name != NULL; ++s) {
+    if(strcmp(name, s->name) == 0) {
+      return s->value;
+    }
+  }
+  return 0;
+}
+#endif /* SYMTAB_CONF_BINARY_SEARCH */
+/*---------------------------------------------------------------------------*/

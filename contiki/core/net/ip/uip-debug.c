@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008, Swedish Institute of Computer Science
+ * Copyright (c) 2010, Swedish Institute of Computer Science.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,53 +26,66 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * This file is part of the Contiki operating system.
- *
  */
 
 /**
  * \file
- *	Coffee architecture-dependent header for the native platform.
+ *         A set of debugging tools
  * \author
- * 	Nicolas Tsiftes <nvt@sics.se>
+ *         Nicolas Tsiftes <nvt@sics.se>
+ *         Niclas Finne <nfi@sics.se>
+ *         Joakim Eriksson <joakime@sics.se>
  */
 
-#ifndef CFS_COFFEE_ARCH_H
-#define CFS_COFFEE_ARCH_H
+#include "net/ip/uip-debug.h"
 
-#include "contiki-conf.h"
-#include "dev/xmem.h"
-
-#define COFFEE_SECTOR_SIZE		65536UL
-#define COFFEE_PAGE_SIZE		(256)
-#define COFFEE_START			0
-#define COFFEE_SIZE				((1024UL * 1024UL) - COFFEE_START)
-#define COFFEE_NAME_LENGTH		16
-#define COFFEE_DYN_SIZE			16384
-#define COFFEE_MAX_OPEN_FILES	6
-#define COFFEE_FD_SET_SIZE		8
-#define COFFEE_LOG_DIVISOR		4
-#define COFFEE_LOG_SIZE			8192
-#define COFFEE_LOG_TABLE_LIMIT	256
-#define COFFEE_MICRO_LOGS		0
-#define COFFEE_IO_SEMANTICS		1
-
-#define COFFEE_WRITE(buf, size, offset)				\
-		xmem_pwrite((char *)(buf), (size), COFFEE_START + (offset))
-
-#define COFFEE_READ(buf, size, offset)				\
-  		xmem_pread((char *)(buf), (size), COFFEE_START + (offset))
-
-#define COFFEE_ERASE(sector)					\
-  		xmem_erase(COFFEE_SECTOR_SIZE, COFFEE_START + (sector) * COFFEE_SECTOR_SIZE)
-
-#define READ_HEADER(hdr, page)						\
-  COFFEE_READ((hdr), sizeof (*hdr), (page) * COFFEE_PAGE_SIZE)
-
-#define WRITE_HEADER(hdr, page)						\
-  COFFEE_WRITE((hdr), sizeof (*hdr), (page) * COFFEE_PAGE_SIZE)
-
-/* Coffee types. */
-typedef int16_t coffee_page_t;
-
-#endif /* !COFFEE_ARCH_H */
+/*---------------------------------------------------------------------------*/
+void
+uip_debug_ipaddr_print(const uip_ipaddr_t *addr)
+{
+#if NETSTACK_CONF_WITH_IPV6
+  uint16_t a;
+  unsigned int i;
+  int f;
+#endif /* NETSTACK_CONF_WITH_IPV6 */
+  if(addr == NULL) {
+    PRINTA("(NULL IP addr)");
+    return;
+  }
+#if NETSTACK_CONF_WITH_IPV6
+  for(i = 0, f = 0; i < sizeof(uip_ipaddr_t); i += 2) {
+    a = (addr->u8[i] << 8) + addr->u8[i + 1];
+    if(a == 0 && f >= 0) {
+      if(f++ == 0) {
+        PRINTA("::");
+      }
+    } else {
+      if(f > 0) {
+        f = -1;
+      } else if(i > 0) {
+        PRINTA(":");
+      }
+      PRINTA("%x", a);
+    }
+  }
+#else /* NETSTACK_CONF_WITH_IPV6 */
+  PRINTA("%u.%u.%u.%u", addr->u8[0], addr->u8[1], addr->u8[2], addr->u8[3]);
+#endif /* NETSTACK_CONF_WITH_IPV6 */
+}
+/*---------------------------------------------------------------------------*/
+void
+uip_debug_lladdr_print(const uip_lladdr_t *addr)
+{
+  unsigned int i;
+  if(addr == NULL) {
+    PRINTA("(NULL LL addr)");
+    return;
+  }
+  for(i = 0; i < sizeof(uip_lladdr_t); i++) {
+    if(i > 0) {
+      PRINTA(":");
+    }
+    PRINTA("%02x", addr->addr[i]);
+  }
+}
+/*---------------------------------------------------------------------------*/

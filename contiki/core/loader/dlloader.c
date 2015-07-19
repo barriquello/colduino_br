@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008, Swedish Institute of Computer Science
+ * Copyright (c) 2005, Swedish Institute of Computer Science
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,50 +29,41 @@
  * This file is part of the Contiki operating system.
  *
  */
+#include <dlfcn.h>
+#include <stddef.h>
+#include <stdio.h>
 
-/**
- * \file
- *	Coffee architecture-dependent header for the native platform.
- * \author
- * 	Nicolas Tsiftes <nvt@sics.se>
- */
+#include "contiki.h"
 
-#ifndef CFS_COFFEE_ARCH_H
-#define CFS_COFFEE_ARCH_H
+/*---------------------------------------------------------------------------*/
+int
+dlloader_load(char *path, char *arg)
+{
+  void *handle;
+  struct process **p;
 
-#include "contiki-conf.h"
-#include "dev/xmem.h"
+  /* Load and link the program. */
+  handle = dlopen(path, RTLD_NOW);
 
-#define COFFEE_SECTOR_SIZE		65536UL
-#define COFFEE_PAGE_SIZE		(256)
-#define COFFEE_START			0
-#define COFFEE_SIZE				((1024UL * 1024UL) - COFFEE_START)
-#define COFFEE_NAME_LENGTH		16
-#define COFFEE_DYN_SIZE			16384
-#define COFFEE_MAX_OPEN_FILES	6
-#define COFFEE_FD_SET_SIZE		8
-#define COFFEE_LOG_DIVISOR		4
-#define COFFEE_LOG_SIZE			8192
-#define COFFEE_LOG_TABLE_LIMIT	256
-#define COFFEE_MICRO_LOGS		0
-#define COFFEE_IO_SEMANTICS		1
+  printf("Loading '%s'\n", path);
+  
+  if(handle == NULL) {
+    printf("dlloader_load: loading failed: %s\n", dlerror());
+    return LOADER_ERR_FMT;
+  } 
 
-#define COFFEE_WRITE(buf, size, offset)				\
-		xmem_pwrite((char *)(buf), (size), COFFEE_START + (offset))
+  /* Find the processes to be started from the loaded program. */
+  p = dlsym(handle, "autostart_processes");
+  if(p == NULL) {
+    printf("dlloader_load: could not find symbol 'autostart_processes'\n");
+    return LOADER_ERR_FMT;
+  }
 
-#define COFFEE_READ(buf, size, offset)				\
-  		xmem_pread((char *)(buf), (size), COFFEE_START + (offset))
+  /* Start the process. */
+ 
+  printf("Starting '%s'\n", PROCESS_NAME_STRING(*p));
+  process_start(*p, (void *)arg);
 
-#define COFFEE_ERASE(sector)					\
-  		xmem_erase(COFFEE_SECTOR_SIZE, COFFEE_START + (sector) * COFFEE_SECTOR_SIZE)
-
-#define READ_HEADER(hdr, page)						\
-  COFFEE_READ((hdr), sizeof (*hdr), (page) * COFFEE_PAGE_SIZE)
-
-#define WRITE_HEADER(hdr, page)						\
-  COFFEE_WRITE((hdr), sizeof (*hdr), (page) * COFFEE_PAGE_SIZE)
-
-/* Coffee types. */
-typedef int16_t coffee_page_t;
-
-#endif /* !COFFEE_ARCH_H */
+  return LOADER_OK;
+}
+/*---------------------------------------------------------------------------*/

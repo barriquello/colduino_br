@@ -479,7 +479,22 @@ void print_lladdrs(void) {
 		}
 	}
 }
+
+void init(void)
+{
+	
+}
  
+void input(void)
+{
+	
+}
+/*---------------------------------------------------------------------------*/
+const struct network_driver null_network_driver = {
+  "Null Net",
+  init,
+  input
+};
 
 
 

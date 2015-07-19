@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008, Swedish Institute of Computer Science
+ * Copyright (c) 2007, Swedish Institute of Computer Science
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,53 +26,73 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * This file is part of the Contiki operating system.
- *
  */
 
-/**
- * \file
- *	Coffee architecture-dependent header for the native platform.
- * \author
- * 	Nicolas Tsiftes <nvt@sics.se>
- */
+#ifdef __AVR__
+#include <avr/pgmspace.h>
+#endif
 
-#ifndef CFS_COFFEE_ARCH_H
-#define CFS_COFFEE_ARCH_H
+#include "loader/sym.h"
 
-#include "contiki-conf.h"
-#include "dev/xmem.h"
+#include <string.h>
 
-#define COFFEE_SECTOR_SIZE		65536UL
-#define COFFEE_PAGE_SIZE		(256)
-#define COFFEE_START			0
-#define COFFEE_SIZE				((1024UL * 1024UL) - COFFEE_START)
-#define COFFEE_NAME_LENGTH		16
-#define COFFEE_DYN_SIZE			16384
-#define COFFEE_MAX_OPEN_FILES	6
-#define COFFEE_FD_SET_SIZE		8
-#define COFFEE_LOG_DIVISOR		4
-#define COFFEE_LOG_SIZE			8192
-#define COFFEE_LOG_TABLE_LIMIT	256
-#define COFFEE_MICRO_LOGS		0
-#define COFFEE_IO_SEMANTICS		1
+static union sym_value
+sym_lookup(const char *name, const struct sym_bol *symbols, int nelts)
+{
+  union sym_value ret;
+  int start, middle, end;
+  int r;
+  
+  start = 0;
+  end = nelts - 1;
 
-#define COFFEE_WRITE(buf, size, offset)				\
-		xmem_pwrite((char *)(buf), (size), COFFEE_START + (offset))
+  while(start <= end) {
+    /* Check middle, divide */
+    middle = (start + end) / 2;
+#ifdef __AVR__
+    PGM_P addr = (PGM_P)pgm_read_word(&symbols[middle].name);
+    r = strcmp_P(name, addr);
+#else
+    r = strcmp(name, symbols[middle].name);
+#endif
+    if(r < 0) {
+      end = middle - 1;
+    } else if(r > 0) {
+      start = middle + 1;
+    } else {
+#ifdef __AVR__
+      ret.func = (sym_func_t)pgm_read_word(&symbols[middle].value);
+      return ret;
+#else
+      return symbols[middle].value;   
+#endif
+    }
+  }
+  ret.obj = NULL;
+  ret.func = NULL;
+  return ret;
+}
 
-#define COFFEE_READ(buf, size, offset)				\
-  		xmem_pread((char *)(buf), (size), COFFEE_START + (offset))
+/* Lookup a pointer to an ANSI C object. */
+void *
+sym_object(const char *name)
+{
+  union sym_value ret;
+  ret = sym_lookup(name, sym_obj, sym_obj_nelts);
+  if(ret.obj != NULL)
+    return ret.obj;
 
-#define COFFEE_ERASE(sector)					\
-  		xmem_erase(COFFEE_SECTOR_SIZE, COFFEE_START + (sector) * COFFEE_SECTOR_SIZE)
+  /*
+   * If the implementation puts constants into the text segment, this
+   * is where to find them!
+   */
+  ret = sym_lookup(name, sym_func, sym_func_nelts);
+  return ret.obj;
+}
 
-#define READ_HEADER(hdr, page)						\
-  COFFEE_READ((hdr), sizeof (*hdr), (page) * COFFEE_PAGE_SIZE)
-
-#define WRITE_HEADER(hdr, page)						\
-  COFFEE_WRITE((hdr), sizeof (*hdr), (page) * COFFEE_PAGE_SIZE)
-
-/* Coffee types. */
-typedef int16_t coffee_page_t;
-
-#endif /* !COFFEE_ARCH_H */
+/* Lookup a pointer to an ANSI C function. */
+sym_func_t
+sym_function(const char *name)
+{
+  return sym_lookup(name, sym_func, sym_func_nelts).func;
+}

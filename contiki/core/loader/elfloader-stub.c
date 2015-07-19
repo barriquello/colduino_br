@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008, Swedish Institute of Computer Science
+ * Copyright (c) 2005, Swedish Institute of Computer Science
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,50 +29,39 @@
  * This file is part of the Contiki operating system.
  *
  */
+#include "elfloader-arch.h"
 
-/**
- * \file
- *	Coffee architecture-dependent header for the native platform.
- * \author
- * 	Nicolas Tsiftes <nvt@sics.se>
- */
+#include <stdio.h>
 
-#ifndef CFS_COFFEE_ARCH_H
-#define CFS_COFFEE_ARCH_H
-
-#include "contiki-conf.h"
-#include "dev/xmem.h"
-
-#define COFFEE_SECTOR_SIZE		65536UL
-#define COFFEE_PAGE_SIZE		(256)
-#define COFFEE_START			0
-#define COFFEE_SIZE				((1024UL * 1024UL) - COFFEE_START)
-#define COFFEE_NAME_LENGTH		16
-#define COFFEE_DYN_SIZE			16384
-#define COFFEE_MAX_OPEN_FILES	6
-#define COFFEE_FD_SET_SIZE		8
-#define COFFEE_LOG_DIVISOR		4
-#define COFFEE_LOG_SIZE			8192
-#define COFFEE_LOG_TABLE_LIMIT	256
-#define COFFEE_MICRO_LOGS		0
-#define COFFEE_IO_SEMANTICS		1
-
-#define COFFEE_WRITE(buf, size, offset)				\
-		xmem_pwrite((char *)(buf), (size), COFFEE_START + (offset))
-
-#define COFFEE_READ(buf, size, offset)				\
-  		xmem_pread((char *)(buf), (size), COFFEE_START + (offset))
-
-#define COFFEE_ERASE(sector)					\
-  		xmem_erase(COFFEE_SECTOR_SIZE, COFFEE_START + (sector) * COFFEE_SECTOR_SIZE)
-
-#define READ_HEADER(hdr, page)						\
-  COFFEE_READ((hdr), sizeof (*hdr), (page) * COFFEE_PAGE_SIZE)
-
-#define WRITE_HEADER(hdr, page)						\
-  COFFEE_WRITE((hdr), sizeof (*hdr), (page) * COFFEE_PAGE_SIZE)
-
-/* Coffee types. */
-typedef int16_t coffee_page_t;
-
-#endif /* !COFFEE_ARCH_H */
+static char datamemory[ELFLOADER_DATAMEMORY_SIZE];
+static const char textmemory[ELFLOADER_TEXTMEMORY_SIZE] = {0};
+/*---------------------------------------------------------------------------*/
+void *
+elfloader_arch_allocate_ram(int size)
+{
+  return (void *)datamemory;
+}
+/*---------------------------------------------------------------------------*/
+void *
+elfloader_arch_allocate_rom(int size)
+{
+  return (void *)textmemory;
+}
+/*---------------------------------------------------------------------------*/
+void
+elfloader_arch_write_rom(int fd, unsigned short textoff, unsigned int size, char *mem)
+{
+  printf("elfloader_arch_write_rom: size %d, offset %i, mem %p\n", size, textoff, mem);
+}
+/*---------------------------------------------------------------------------*/
+void
+elfloader_arch_relocate(int fd, unsigned int sectionoffset,
+			char *sectionaddr,
+			struct elf32_rela *rela, char *addr)
+{
+  printf("elfloader_arch_relocate: sectionoffset 0x%04x, sectionaddr %p, r_offset 0x%04x, r_info 0x%04x, r_addend 0x%04x, addr %p\n",
+	 sectionoffset, sectionaddr,
+	 (unsigned int)rela->r_offset, (unsigned int)rela->r_info,
+	 (unsigned int)rela->r_addend, addr);
+}
+/*---------------------------------------------------------------------------*/

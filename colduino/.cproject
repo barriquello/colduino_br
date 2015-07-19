@@ -98,151 +98,118 @@
 									<listOptionValue builtIn="false" value="libs/utils.c"/>
 									<listOptionValue builtIn="false" value="FatFs/SD_API.c"/>
 									<listOptionValue builtIn="false" value="FatFs/ff.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/cfs/cfs-coffee.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/dev/leds.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/dev/nullradio.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/dev/serial-line.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/dev/slip.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/aes-128.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/assert.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/crc16.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/gcr.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/ifft.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/list.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/me.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/me_tabs.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/memb.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/mmem.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/petsciiconv.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/print-stats.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/random.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/ringbuf.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/sensors.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/settings.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/strncasecmp/strncasecmp.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/lib/trickle-timer.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/dhcpc.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/ip64-addr.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/psock.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/resolv.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/simple-udp.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/slipdev.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/tcp-socket.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/tcpip.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/udp-socket.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/uip-debug.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/uip-nameserver.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/uip-packetqueue.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/uip-split.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/uip-udp-packet.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ip/uiplib.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/multicast/roll-tm.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/multicast/smrf.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/multicast/uip-mcast6-route.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/multicast/uip-mcast6-stats.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/sicslowpan.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/uip-ds6-nbr.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/uip-ds6-route.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/uip-ds6.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/uip-icmp6.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/uip-nd6.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/ipv6/uip6.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/linkaddr.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/llsec/anti-replay.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/llsec/ccm-star.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/llsec/noncoresec/noncoresec.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/llsec/nullsec.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/contikimac/contikimac-framer.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/contikimac/contikimac.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/csma.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/cxmac/cxmac.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/frame802154.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/framer-802154.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/framer-nullmac.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/framer.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/mac-sequence.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/mac.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/nullmac.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/nullrdc-noframer.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/nullrdc.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/phase.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/mac/sicslowmac/sicslowmac.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/nbr-table.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/netstack.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/packetbuf.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/queuebuf.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/abc.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/announcement.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/broadcast-announcement.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/broadcast.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/chameleon-bitopt.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/chameleon-raw.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/chameleon.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/channel.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/collect-link-estimate.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/collect-neighbor.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/collect.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/ipolite.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/mesh.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/multihop.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/neighbor-discovery.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/netflood.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/packetqueue.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/polite-announcement.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/polite.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/rime.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/rimestats.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/rmh.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/route-discovery.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/route.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/rucb.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/rudolph1.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/rudolph2.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/runicast.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/stbroadcast.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/stunicast.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/timesynch.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/trickle.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rime/unicast.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rpl/rpl-dag-root.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rpl/rpl-dag.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rpl/rpl-ext-header.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rpl/rpl-icmp6.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rpl/rpl-mrhof.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rpl/rpl-of0.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rpl/rpl-timers.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/net/rpl/rpl.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/arg.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/autostart.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/compower.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/ctimer.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/energest.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/etimer.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/mt.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/process.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/procinit.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/rtimer.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/stimer.c"/>
-									<listOptionValue builtIn="false" value="contiki/contiki-compat/sys/timer.c"/>
-									<listOptionValue builtIn="false" value="contiki/platform/cfv1/contiki-cpu/clock.c"/>
-									<listOptionValue builtIn="false" value="contiki/platform/cfv1/contiki-cpu/leds-arch.c"/>
-									<listOptionValue builtIn="false" value="contiki/platform/cfv1/contiki-cpu/mtarch.c"/>
-									<listOptionValue builtIn="false" value="contiki/platform/cfv1/contiki-cpu/rtimer-arch.c"/>
-									<listOptionValue builtIn="false" value="contiki/platform/cfv1/contiki-cpu/slip-arch.c"/>
-									<listOptionValue builtIn="false" value="contiki/platform/cfv1/contiki-cpu/watchdog.c"/>
-									<listOptionValue builtIn="false" value="contiki/platform/cfv1/contiki-cpu/xmem.c"/>
-									<listOptionValue builtIn="false" value="contiki/platform/cfv1/contiki-main.c"/>
 									<listOptionValue builtIn="false" value="contiki/examples/rpl-border-router/border-router.c"/>
 									<listOptionValue builtIn="false" value="contiki/examples/rpl-border-router/httpd-simple.c"/>
 									<listOptionValue builtIn="false" value="contiki/examples/rpl-border-router/slip-bridge.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/cfs/cfs-coffee.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/dev/leds.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/dev/nullradio.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/dev/serial-line.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/dev/slip.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/aes-128.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/assert.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/ccm-star.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/crc16.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/gcr.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/ifft.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/list.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/me.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/me_tabs.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/memb.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/mmem.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/petsciiconv.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/print-stats.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/random.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/ringbuf.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/sensors.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/settings.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/strncasecmp/strncasecmp.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/lib/trickle-timer.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/ip64-addr.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/psock.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/resolv.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/simple-udp.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/slipdev.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/tcp-socket.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/tcpip.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/udp-socket.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/uip-debug.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/uip-nameserver.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/uip-packetqueue.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/uip-split.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/uip-udp-packet.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ip/uiplib.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/multicast/roll-tm.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/multicast/smrf.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/multicast/uip-mcast6-route.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/multicast/uip-mcast6-stats.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/sicslowpan.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/uip-ds6-nbr.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/uip-ds6-route.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/uip-ds6.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/uip-icmp6.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/uip-nd6.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/ipv6/uip6.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/linkaddr.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/llsec/anti-replay.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/llsec/ccm-star-packetbuf.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/llsec/nullsec.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/contikimac/contikimac-framer.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/contikimac/contikimac.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/csma.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/cxmac/cxmac.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/frame802154.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/framer-802154.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/framer-nullmac.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/framer.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/mac-sequence.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/mac.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/nullmac.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/nullrdc-noframer.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/nullrdc.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/phase.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/mac/sicslowmac/sicslowmac.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/nbr-table.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/netstack.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/packetbuf.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/queuebuf.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/arg.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/autostart.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/compower.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/ctimer.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/energest.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/etimer.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/mt.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/process.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/procinit.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/rtimer.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/stimer.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/sys/timer.c"/>
+									<listOptionValue builtIn="false" value="contiki/platform/brtos/contiki-main.c"/>
+									<listOptionValue builtIn="false" value="contiki/platform/brtos/cpu/clock.c"/>
+									<listOptionValue builtIn="false" value="contiki/platform/brtos/cpu/leds-arch.c"/>
+									<listOptionValue builtIn="false" value="contiki/platform/brtos/cpu/mtarch.c"/>
+									<listOptionValue builtIn="false" value="contiki/platform/brtos/cpu/rtimer-arch.c"/>
+									<listOptionValue builtIn="false" value="contiki/platform/brtos/cpu/slip-arch.c"/>
+									<listOptionValue builtIn="false" value="contiki/platform/brtos/cpu/watchdog.c"/>
+									<listOptionValue builtIn="false" value="contiki/platform/brtos/cpu/xmem.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/rpl/rpl-dag-root.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/rpl/rpl-dag.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/rpl/rpl-ext-header.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/rpl/rpl-icmp6.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/rpl/rpl-mrhof.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/rpl/rpl-of0.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/rpl/rpl-timers.c"/>
+									<listOptionValue builtIn="false" value="contiki/core/net/rpl/rpl.c"/>
 								</option>
 								<option id="com.freescale.coldfire.toolchain.linker.base.generateSrec.length.977676224" name="Max S-Record Length" superClass="com.freescale.coldfire.toolchain.linker.base.generateSrec.length" value="64" valueType="string"/>
+								<option id="com.freescale.coldfire.cdt.toolchain.option.linkorder.enabled.1203114362" name="Customize linker input order:" superClass="com.freescale.coldfire.cdt.toolchain.option.linkorder.enabled" value="false" valueType="boolean"/>
 								<inputType id="com.freescale.coldfire.toolchain.linker.base.input.1991355322" name="Linker Input" superClass="com.freescale.coldfire.toolchain.linker.base.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 								</inputType>
 							</tool>
-							<tool errorParsers="" id="com.freescale.coldfire.toolchain.compiler.debug.940251024" name="ColdFire Compiler" superClass="com.freescale.coldfire.toolchain.compiler.debug">
+							<tool commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="" id="com.freescale.coldfire.toolchain.compiler.debug.940251024" name="ColdFire Compiler" superClass="com.freescale.coldfire.toolchain.compiler.debug">
 								<option id="com.freescale.coldfire.toolchain.compiler.base.input.include.667542137" name="User Path (-i)" superClass="com.freescale.coldfire.toolchain.compiler.base.input.include" valueType="includePath">
 									<listOptionValue builtIn="false" value="../../brtos/includes"/>
 									<listOptionValue builtIn="false" value="../../hal/CodeWarrior_CFV1"/>
@@ -268,18 +235,18 @@
 									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ColdFire_Support/derivatives/device/asm_include&quot;"/>
 									<listOptionValue builtIn="false" value="../../libs"/>
 									<listOptionValue builtIn="false" value="../../FatFs"/>
-									<listOptionValue builtIn="false" value="../../contiki/contiki-compat"/>
-									<listOptionValue builtIn="false" value="../../contiki/contiki-compat/sys"/>
-									<listOptionValue builtIn="false" value="../../contiki/contiki-compat/net"/>
-									<listOptionValue builtIn="false" value="../../contiki/contiki-compat/net/ip"/>
-									<listOptionValue builtIn="false" value="../../contiki/contiki-compat/net/rpl"/>
-									<listOptionValue builtIn="false" value="../../contiki/contiki-compat/lib"/>
-									<listOptionValue builtIn="false" value="../../contiki/contiki-compat/dev"/>
-									<listOptionValue builtIn="false" value="../../contiki/contiki-compat/cfs"/>
 									<listOptionValue builtIn="false" value="../../contiki/contiki-apps/webserver"/>
 									<listOptionValue builtIn="false" value="../../contiki/examples/rpl-border-router"/>
 									<listOptionValue builtIn="false" value="../../contiki/platform/brtos"/>
 									<listOptionValue builtIn="false" value="../../contiki/platform/brtos/cpu"/>
+									<listOptionValue builtIn="false" value="../../contiki/core"/>
+									<listOptionValue builtIn="false" value="../../contiki/core/sys"/>
+									<listOptionValue builtIn="false" value="../../contiki/core/net"/>
+									<listOptionValue builtIn="false" value="../../contiki/core/net/ip"/>
+									<listOptionValue builtIn="false" value="../../contiki/core/net/rpl"/>
+									<listOptionValue builtIn="false" value="../../contiki/core/lib"/>
+									<listOptionValue builtIn="false" value="../../contiki/core/dev"/>
+									<listOptionValue builtIn="false" value="../../contiki/core/cfs"/>
 								</option>
 								<option id="com.freescale.coldfire.toolchain.compiler.base.optionCategory.processor.sdata.456667483" name="Use .sdata/.sbiss for (byte in integer between -1..32K)" superClass="com.freescale.coldfire.toolchain.compiler.base.optionCategory.processor.sdata" value="0" valueType="string"/>
 								<option id="com.freescale.coldfire.toolchain.compiler.base.input.include.system.1788546878" name="System Path (-I- -I)" superClass="com.freescale.coldfire.toolchain.compiler.base.input.include.system"/>
@@ -315,7 +282,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="CodeWarrior_CFV1"/>
 						<entry excluding="option" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FatFs"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="app"/>
-						<entry excluding="platform/cfv1|contiki-apps/webserver|platform/kl25z|contiki-compat/net/ipv4|contiki-compat/net/ipv4/uip-over-mesh.h|contiki-compat/net/ipv4/uip-over-mesh.c|contiki-compat/net/ipv4/uip-neighbor.h|contiki-compat/net/ipv4/uip-neighbor.c|contiki-compat/net/ipv4/uip-fw-drv.h|contiki-compat/net/ipv4/uip-fw-drv.c|contiki-compat/net/ipv4/uip-fw.h|contiki-compat/net/ipv4/uip-fw.c|contiki-compat/net/ipv4/uip.c|contiki-compat/net/ipv4/uip_arp.h|contiki-compat/net/ipv4/uip_arp.c|contiki-compat/net/ipv4/uaodv-rt.h|contiki-compat/net/ipv4/uaodv-rt.c|contiki-compat/net/ipv4/uaodv-def.h|contiki-compat/net/ipv4/uaodv.h|contiki-compat/net/ipv4/uaodv.c|contiki-apps/webserver/httpd-cfs.c|contiki-apps/webserver/webserver-dsc.h|contiki-apps/webserver/webserver-dsc.c|contiki-apps/webserver/webserver.h|contiki-apps/webserver/webserver.c|contiki-compat/net/http-socket/http-socket.c|contiki-compat/net/ip64" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="contiki"/>
+						<entry excluding="core/net/rime|core/loader|contiki-compat|core/net/ip64|core/net/llsec/noncoresec|core/net/ip/dhcpc.c|core/net/ipv4|core/cfs/cfs-xmem.c|core/cfs/cfs-ram.c|core/cfs/cfs-posix-dir.c|core/cfs/cfs-posix.c|core/cfs/cfs-eeprom.c|core/net/http-socket|core/ctk|contiki-apps|platform/cfv1|contiki-apps/webserver|platform/kl25z|contiki-compat/net/ipv4|contiki-compat/net/ipv4/uip-over-mesh.h|contiki-compat/net/ipv4/uip-over-mesh.c|contiki-compat/net/ipv4/uip-neighbor.h|contiki-compat/net/ipv4/uip-neighbor.c|contiki-compat/net/ipv4/uip-fw-drv.h|contiki-compat/net/ipv4/uip-fw-drv.c|contiki-compat/net/ipv4/uip-fw.h|contiki-compat/net/ipv4/uip-fw.c|contiki-compat/net/ipv4/uip.c|contiki-compat/net/ipv4/uip_arp.h|contiki-compat/net/ipv4/uip_arp.c|contiki-compat/net/ipv4/uaodv-rt.h|contiki-compat/net/ipv4/uaodv-rt.c|contiki-compat/net/ipv4/uaodv-def.h|contiki-compat/net/ipv4/uaodv.h|contiki-compat/net/ipv4/uaodv.c|contiki-apps/webserver/httpd-cfs.c|contiki-apps/webserver/webserver-dsc.h|contiki-apps/webserver/webserver-dsc.c|contiki-apps/webserver/webserver.h|contiki-apps/webserver/webserver.c|contiki-compat/net/http-socket/http-socket.c|contiki-compat/net/ip64" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="contiki"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="devices"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="libs"/>
 					</sourceEntries>

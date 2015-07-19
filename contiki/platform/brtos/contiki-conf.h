@@ -62,6 +62,8 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_ROUTER                 1 
 #endif
 
+//#define UIP_CONF_IPV6_RPL				0
+
 #define UIP_CONF_MAX_LISTENPORTS      2
 #define UIP_CONF_MAX_CONNECTIONS      1
 
@@ -70,7 +72,6 @@ typedef unsigned short uip_stats_t;
 #elif PROCESSOR == ARM_Cortex_M0	
 #define UIP_CONF_BYTE_ORDER           UIP_LITTLE_ENDIAN
 #endif		
-
 
 #define UIP_CONF_BUFFER_SIZE          1514 //1280
 #define UIP_CONF_TCP_SPLIT            0
@@ -90,7 +91,7 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_DS6_ADDR_NBU    		4
 #define UIP_CONF_DS6_MADDR_NBU   		0
 #define UIP_CONF_DS6_AADDR_NBU   		0
-//#define NETSTACK_CONF_NETWORK			sicslowpan_driver
+#define NETSTACK_CONF_NETWORK			null_network_driver //sicslowpan_driver
 #else
 #define UIP_CONF_IP_FORWARD          1
 #endif /* NETSTACK_CONF_WITH_IPV6 */
