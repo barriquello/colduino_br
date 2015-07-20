@@ -88,7 +88,6 @@
 #define uip_l3_icmp_hdr_len (UIP_IPH_LEN + uip_ext_len + UIP_ICMPH_LEN)
 #endif /*NETSTACK_CONF_WITH_IPV6*/
 
-
 #include "net/ip/uipopt.h"
 
 /* For memcmp */

@@ -22,7 +22,7 @@
 /********************************************************************************/
 
 #ifndef STARTCF_H
-#define STARTCF_H
+#define STARTCF_H 
 
 
 #ifdef __cplusplus

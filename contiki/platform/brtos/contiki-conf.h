@@ -7,7 +7,7 @@
 #define CC_CONF_FASTCALL
 #define CC_CONF_INLINE   __inline
 
-#define ARCH_DOESNT_NEED_ALIGNED_STRUCTS 1
+//#define ARCH_DOESNT_NEED_ALIGNED_STRUCTS 1
 
 #define CCIF
 #define CLIF
@@ -49,6 +49,22 @@ typedef unsigned short uip_stats_t;
 
 #define NETSTACK_CONF_WITH_IPV6		  1
 
+#if 1
+/* hack for CW compiler. It is not finding this defines in uip.h */
+/* Header sizes. */
+#if NETSTACK_CONF_WITH_IPV6
+#define UIP_IPH_LEN    40
+#define UIP_FRAGH_LEN  8
+#else /* NETSTACK_CONF_WITH_IPV6 */
+#define UIP_IPH_LEN    20    /* Size of IP header */
+#endif /* NETSTACK_CONF_WITH_IPV6 */
+
+#define uip_l2_l3_hdr_len (UIP_LLH_LEN + UIP_IPH_LEN + uip_ext_len)
+#define uip_l2_l3_icmp_hdr_len (UIP_LLH_LEN + UIP_IPH_LEN + uip_ext_len + UIP_ICMPH_LEN)
+#define uip_l3_hdr_len (UIP_IPH_LEN + uip_ext_len)
+#define uip_l3_icmp_hdr_len (UIP_IPH_LEN + uip_ext_len + UIP_ICMPH_LEN)
+#endif
+
 #define UIP_CONF_UDP                  1 //changed
 #define UIP_CONF_TCP                  1
 
@@ -57,6 +73,8 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_LL_802154              1
 #define UIP_CONF_LLH_LEN                0
 //#define UIP_CONF_LLH_LEN              14
+
+#define NETSTACK_CONF_WITH_RIME			1
 
 #ifndef UIP_CONF_ROUTER
 #define UIP_CONF_ROUTER                 1 
@@ -91,7 +109,7 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_DS6_ADDR_NBU    		4
 #define UIP_CONF_DS6_MADDR_NBU   		0
 #define UIP_CONF_DS6_AADDR_NBU   		0
-#define NETSTACK_CONF_NETWORK			null_network_driver //sicslowpan_driver
+#define NETSTACK_CONF_NETWORK			rime_driver //null_network_driver //sicslowpan_driver
 #else
 #define UIP_CONF_IP_FORWARD          1
 #endif /* NETSTACK_CONF_WITH_IPV6 */
@@ -112,6 +130,7 @@ typedef unsigned short uip_stats_t;
 
 
 #if NETSTACK_CONF_WITH_IPV6
+
 /* The Windows build uses wpcap to connect to a host interface. It finds the interface by scanning for
  * an address, which can be specified here and overridden with the command line.
  * An ip4 or ip6 address can be used; this allows turning off the ip4 protocol on the interface.
@@ -207,5 +226,6 @@ int strcasecmp(const char*, const char*);
 #if PROJECT_CONF_H
 #include "project-conf.h"
 #endif /* PROJECT_CONF_H */
+
 
 #endif /* CONTIKI_CONF_H_ */

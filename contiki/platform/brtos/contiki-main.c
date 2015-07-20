@@ -81,6 +81,12 @@ void print_lladdrs(void) ;
 
 PROCINIT(&tcpip_process);
 
+/* hack for "rand", because "rand" does not work in CFv1 */
+int rand(void)
+{
+	return 1;
+}
+
 
 //#include "webserver-nogui.h"
 /*---------------------------------------------------------------------------*/
@@ -480,6 +486,7 @@ void print_lladdrs(void) {
 	}
 }
 
+#if 0
 void init(void)
 {
 	
@@ -495,6 +502,7 @@ const struct network_driver null_network_driver = {
   init,
   input
 };
+#endif
 
 
 

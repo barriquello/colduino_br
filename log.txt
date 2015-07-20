@@ -10,3 +10,27 @@ alterado:
     char buf[COFFEE_PAGE_SIZE];
 @ cfs-coffee.c
 
+removido
+
+
+printf("Assertion failed: file %s, line %d.\n", file, lineno); 
+@ assert.c
+
+removido
+
+#if 0
+void
+rime_sniffer_add(struct rime_sniffer *s)
+{
+  callback = s;
+}
+
+void
+rime_sniffer_remove(struct rime_sniffer *s)
+{
+  callback = NULL;
+}
+#endif
+
+@sicslowpan.c
+

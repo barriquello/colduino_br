@@ -145,7 +145,7 @@
 /* UIP_CONF_IPV6_RPL specifies if RPL is to be used for IPv6
    routing. */
 #ifndef UIP_CONF_IPV6_RPL
-#define UIP_CONF_IPV6_RPL 1
+#define UIP_CONF_IPV6_RPL 0
 #endif /* UIP_CONF_IPV6_RPL */
 
 /* UIP_CONF_MAX_ROUTES specifies the maximum number of routes that each
