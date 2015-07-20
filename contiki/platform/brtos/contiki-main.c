@@ -196,7 +196,7 @@ debug_printf(char *format, ...)
 #endif
   while(1)
   {
-#if PROCESSOR == COLDFIRE_V1		
+#if BRTOS_CPU == COLDFIRE_V1		
 		__RESET_WATCHDOG();
 #endif		
   }
@@ -441,7 +441,7 @@ sensors_light1(void)
 void InitializeUART(void)
 {
 	while(1){
-#if PROCESSOR == COLDFIRE_V1		
+#if BRTOS_CPU == COLDFIRE_V1		
 		__RESET_WATCHDOG();
 #endif		
 	}
@@ -451,7 +451,7 @@ void InitializeUART(void)
 char ReadUARTN(void)
 {
 	while(1){
-#if PROCESSOR == COLDFIRE_V1		
+#if BRTOS_CPU == COLDFIRE_V1		
 		__RESET_WATCHDOG();
 #endif		
 		}
@@ -461,7 +461,7 @@ void WriteUARTN(char c)
 {
 	(void)c;
 	while(1){
-#if PROCESSOR == COLDFIRE_V1		
+#if BRTOS_CPU == COLDFIRE_V1		
 		__RESET_WATCHDOG();
 #endif		
 	}

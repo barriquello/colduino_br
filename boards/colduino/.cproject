@@ -236,7 +236,7 @@
 								</option>
 								<option id="com.freescale.coldfire.toolchain.linker.base.generateSrec.length.977676224" name="Max S-Record Length" superClass="com.freescale.coldfire.toolchain.linker.base.generateSrec.length" value="64" valueType="string"/>
 								<option id="com.freescale.coldfire.cdt.toolchain.option.linkorder.enabled.1203114362" name="Customize linker input order:" superClass="com.freescale.coldfire.cdt.toolchain.option.linkorder.enabled" value="false" valueType="boolean"/>
-								<option id="com.freescale.coldfire.toolchain.linker.base.generateList.338762070" superClass="com.freescale.coldfire.toolchain.linker.base.generateList" value="true" valueType="boolean"/>
+								<option id="com.freescale.coldfire.toolchain.linker.base.generateList.338762070" name="Generate Listing File" superClass="com.freescale.coldfire.toolchain.linker.base.generateList" value="true" valueType="boolean"/>
 								<inputType id="com.freescale.coldfire.toolchain.linker.base.input.1991355322" name="Linker Input" superClass="com.freescale.coldfire.toolchain.linker.base.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -244,9 +244,6 @@
 							</tool>
 							<tool commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="" id="com.freescale.coldfire.toolchain.compiler.debug.940251024" name="ColdFire Compiler" superClass="com.freescale.coldfire.toolchain.compiler.debug">
 								<option id="com.freescale.coldfire.toolchain.compiler.base.input.include.667542137" name="User Path (-i)" superClass="com.freescale.coldfire.toolchain.compiler.base.input.include" valueType="includePath">
-									<listOptionValue builtIn="false" value="../../brtos/includes"/>
-									<listOptionValue builtIn="false" value="../../hal/CodeWarrior_CFV1"/>
-									<listOptionValue builtIn="false" value="../../devices"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Headers&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/USB/app/msd&quot;"/>
@@ -266,20 +263,23 @@
 									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ColdFire_Support/ewl/EWL_Runtime/Runtime_ColdFire/Source&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ColdFire_Support/derivatives/device/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ColdFire_Support/derivatives/device/asm_include&quot;"/>
-									<listOptionValue builtIn="false" value="../../libs"/>
-									<listOptionValue builtIn="false" value="../../FatFs"/>
-									<listOptionValue builtIn="false" value="../../contiki/contiki-apps/webserver"/>
-									<listOptionValue builtIn="false" value="../../contiki/examples/rpl-border-router"/>
-									<listOptionValue builtIn="false" value="../../contiki/platform/brtos"/>
-									<listOptionValue builtIn="false" value="../../contiki/platform/brtos/cpu"/>
-									<listOptionValue builtIn="false" value="../../contiki/core"/>
-									<listOptionValue builtIn="false" value="../../contiki/core/sys"/>
-									<listOptionValue builtIn="false" value="../../contiki/core/net"/>
-									<listOptionValue builtIn="false" value="../../contiki/core/net/ip"/>
-									<listOptionValue builtIn="false" value="../../contiki/core/net/rpl"/>
-									<listOptionValue builtIn="false" value="../../contiki/core/lib"/>
-									<listOptionValue builtIn="false" value="../../contiki/core/dev"/>
-									<listOptionValue builtIn="false" value="../../contiki/core/cfs"/>
+									<listOptionValue builtIn="false" value="../../../brtos/includes"/>
+									<listOptionValue builtIn="false" value="../../../hal/CodeWarrior_CFV1"/>
+									<listOptionValue builtIn="false" value="../../../devices"/>
+									<listOptionValue builtIn="false" value="../../../contiki/apps/webserver"/>
+									<listOptionValue builtIn="false" value="../../../contiki/core/cfs"/>
+									<listOptionValue builtIn="false" value="../../../contiki/core/dev"/>
+									<listOptionValue builtIn="false" value="../../../contiki/core/lib"/>
+									<listOptionValue builtIn="false" value="../../../contiki/core/net/rpl"/>
+									<listOptionValue builtIn="false" value="../../../contiki/core/net/ip"/>
+									<listOptionValue builtIn="false" value="../../../contiki/core/net"/>
+									<listOptionValue builtIn="false" value="../../../contiki/core/sys"/>
+									<listOptionValue builtIn="false" value="../../../contiki/core"/>
+									<listOptionValue builtIn="false" value="../../../contiki/platform/brtos/cpu"/>
+									<listOptionValue builtIn="false" value="../../../contiki/platform/brtos"/>
+									<listOptionValue builtIn="false" value="../../../contiki/examples/rpl-border-router"/>
+									<listOptionValue builtIn="false" value="../../../FatFs"/>
+									<listOptionValue builtIn="false" value="../../../libs"/>
 								</option>
 								<option id="com.freescale.coldfire.toolchain.compiler.base.optionCategory.processor.sdata.456667483" name="Use .sdata/.sbiss for (byte in integer between -1..32K)" superClass="com.freescale.coldfire.toolchain.compiler.base.optionCategory.processor.sdata" value="0" valueType="string"/>
 								<option id="com.freescale.coldfire.toolchain.compiler.base.input.include.system.1788546878" name="System Path (-I- -I)" superClass="com.freescale.coldfire.toolchain.compiler.base.input.include.system"/>
@@ -289,9 +289,9 @@
 								<option id="com.freescale.coldfire.toolchain.compiler.base.optionCategory.processor.coloring.689682538" name="Register Coloring (-coloring)" superClass="com.freescale.coldfire.toolchain.compiler.base.optionCategory.processor.coloring" value="true" valueType="boolean"/>
 								<option id="com.freescale.coldfire.toolchain.compiler.base.options.optLevel.1830335566" name="Optimization Level (-opt)" superClass="com.freescale.coldfire.toolchain.compiler.base.options.optLevel" value="com.freescale.coldfire.toolchain.compiler.base.optionCategory.optimization.optlevel.0" valueType="enumerated"/>
 								<option id="com.freescale.coldfire.toolchain.compiler.base.optionCategory.processor.sche.2012111504" name="Instruction Scheduling (-scheduling)" superClass="com.freescale.coldfire.toolchain.compiler.base.optionCategory.processor.sche" value="true" valueType="boolean"/>
-								<option id="com.freescale.coldfire.toolchain.compiler.base.warnings.unusedvar.45598996" superClass="com.freescale.coldfire.toolchain.compiler.base.warnings.unusedvar" value="false" valueType="boolean"/>
-								<option id="com.freescale.coldfire.toolchain.compiler.base.warnings.unusedarg.751165170" superClass="com.freescale.coldfire.toolchain.compiler.base.warnings.unusedarg" value="false" valueType="boolean"/>
-								<option id="com.freescale.coldfire.toolchain.compiler.base.options.inlining.50065346" superClass="com.freescale.coldfire.toolchain.compiler.base.options.inlining" value="com.freescale.coldfire.toolchain.compiler.base.options.inlining.smart" valueType="enumerated"/>
+								<option id="com.freescale.coldfire.toolchain.compiler.base.warnings.unusedvar.45598996" name="Unused Variables" superClass="com.freescale.coldfire.toolchain.compiler.base.warnings.unusedvar" value="false" valueType="boolean"/>
+								<option id="com.freescale.coldfire.toolchain.compiler.base.warnings.unusedarg.751165170" name="Unused Arguments" superClass="com.freescale.coldfire.toolchain.compiler.base.warnings.unusedarg" value="false" valueType="boolean"/>
+								<option id="com.freescale.coldfire.toolchain.compiler.base.options.inlining.50065346" name="Inlining" superClass="com.freescale.coldfire.toolchain.compiler.base.options.inlining" value="com.freescale.coldfire.toolchain.compiler.base.options.inlining.smart" valueType="enumerated"/>
 								<inputType id="com.freescale.coldfire.toolchain.compiler.base.input.1268974395" name="C Source File" superClass="com.freescale.coldfire.toolchain.compiler.base.input"/>
 								<inputType id="com.freescale.coldfire.toolchain.compiler.base.input.c++.2093161631" name="C++ Source File" superClass="com.freescale.coldfire.toolchain.compiler.base.input.c++"/>
 							</tool>
@@ -314,11 +314,12 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="src|Sources/USB/app/cdc/virtual_nic|contiki|monitor|libs|modbus_master|devices|app|minINI|modbus_slaves|modbus_master_lib|FatFs|freemodbus|CodeWarrior_CFV1|Sources/colduino_gprs/FatFS/option/cc932.c|Sources/colduino_gprs/FatFS/bkp|Sources/colduino_gprs/FatFS/option/cc949.c|Sources/minINI/test.c|Sources/colduino_gprs/FatFS/option/cc950.c|Sources/colduino_gprs/libmodbus/modbus.c|Sources/minINI/minGlue-efsl.h|Sources/minINI/minIni.c|Sources/FatFS/option/cc936.c|Sources/colduino_gprs/libmodbus/tests/unit-test-master.c|Sources/minINI/minGlue-mdd.h|Sources/FatFS/option/cc932.c|hal|Sources/colduino_gprs/FatFS/option/ccsbcs.c|Sources/FatFS/option/cc949.c|Sources/colduino_gprs/FatFS/option/unicode.c|Sources/colduino_gprs/libmodbus/modbus-tcp-private.h|Sources/freemodbus/modbus|Sources/minINI/minGlue-stdio.h|core|Sources/minINI/minGlue.h|Sources/minINI/minGlue-ccs.h|xmacro|Sources/minINI/minIni.h|Sources/colduino_gprs/libmodbus/tests/unit-test-slave.c|Sources/FatFS/option/cc950.c|Sources/minINI/minGlue-ffs.h|Sources/minINI/minGlue-FatFs.h|Sources/FatFS/option/syscall.c|Sources/colduino_gprs/FatFS/option/syscall.c|lc|Sources/FatFS/option/unicode.c|Sources/FatFS/option/ccsbcs.c|Sources/colduino_gprs/FatFS/option/cc936.c|Sources/colduino_gprs/libmodbus/modbus-tcp.h|Sources/colduino_gprs/libmodbus/modbus-tcp.c|Sources/minINI/wxMinIni.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Sources/USB/app/cdc/virtual_nic|libs|CodeWarrior_CFV1|FatFS|devices|contiki|brtos|app" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="CodeWarrior_CFV1"/>
-						<entry excluding="option" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FatFs"/>
+						<entry excluding="option" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FatFS"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="app"/>
-						<entry excluding="core/net/ipv6/sicslowpan.c|core/loader|contiki-compat|core/net/ip64|core/net/llsec/noncoresec|core/net/ip/dhcpc.c|core/net/ipv4|core/cfs/cfs-xmem.c|core/cfs/cfs-ram.c|core/cfs/cfs-posix-dir.c|core/cfs/cfs-posix.c|core/cfs/cfs-eeprom.c|core/net/http-socket|core/ctk|contiki-apps|platform/cfv1|contiki-apps/webserver|platform/kl25z|contiki-compat/net/ipv4|contiki-compat/net/ipv4/uip-over-mesh.h|contiki-compat/net/ipv4/uip-over-mesh.c|contiki-compat/net/ipv4/uip-neighbor.h|contiki-compat/net/ipv4/uip-neighbor.c|contiki-compat/net/ipv4/uip-fw-drv.h|contiki-compat/net/ipv4/uip-fw-drv.c|contiki-compat/net/ipv4/uip-fw.h|contiki-compat/net/ipv4/uip-fw.c|contiki-compat/net/ipv4/uip.c|contiki-compat/net/ipv4/uip_arp.h|contiki-compat/net/ipv4/uip_arp.c|contiki-compat/net/ipv4/uaodv-rt.h|contiki-compat/net/ipv4/uaodv-rt.c|contiki-compat/net/ipv4/uaodv-def.h|contiki-compat/net/ipv4/uaodv.h|contiki-compat/net/ipv4/uaodv.c|contiki-apps/webserver/httpd-cfs.c|contiki-apps/webserver/webserver-dsc.h|contiki-apps/webserver/webserver-dsc.c|contiki-apps/webserver/webserver.h|contiki-apps/webserver/webserver.c|contiki-compat/net/http-socket/http-socket.c|contiki-compat/net/ip64" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="contiki"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="brtos"/>
+						<entry excluding="core/net/ipv6/sicslowpan.c|apps/webserver|core/cfs/cfs-xmem.c|core/cfs/cfs-ram.c|core/cfs/cfs-posix-dir.c|core/cfs/cfs-posix.c|core/cfs/cfs-eeprom.c|core/ctk|core/loader|core/net/http-socket|core/net/ipv4|core/net/ip64|core/net/llsec/noncoresec" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="contiki"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="devices"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="libs"/>
 					</sourceEntries>

@@ -43,19 +43,21 @@
 #include "contiki-conf.h"
 #include "dev/xmem.h"
 
-#define COFFEE_SECTOR_SIZE		65536UL
+#if 1
+#define COFFEE_SECTOR_SIZE		256UL
 #define COFFEE_PAGE_SIZE		(256)
 #define COFFEE_START			0
-#define COFFEE_SIZE				((1024UL * 1024UL) - COFFEE_START)
+#define COFFEE_SIZE				((1UL * 256UL) - COFFEE_START)
 #define COFFEE_NAME_LENGTH		16
-#define COFFEE_DYN_SIZE			16384
-#define COFFEE_MAX_OPEN_FILES	6
+#define COFFEE_DYN_SIZE			128
+#define COFFEE_MAX_OPEN_FILES	1
 #define COFFEE_FD_SET_SIZE		8
 #define COFFEE_LOG_DIVISOR		4
-#define COFFEE_LOG_SIZE			8192
-#define COFFEE_LOG_TABLE_LIMIT	256
+#define COFFEE_LOG_SIZE			256
+#define COFFEE_LOG_TABLE_LIMIT	8
 #define COFFEE_MICRO_LOGS		0
 #define COFFEE_IO_SEMANTICS		1
+#endif
 
 #define COFFEE_WRITE(buf, size, offset)				\
 		xmem_pwrite((char *)(buf), (size), COFFEE_START + (offset))

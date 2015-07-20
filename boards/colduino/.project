@@ -74,37 +74,37 @@
 		<link>
 			<name>CodeWarrior_CFV1</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/hal/CodeWarrior_CFV1</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/hal/CodeWarrior_CFV1</locationURI>
 		</link>
 		<link>
-			<name>FatFs</name>
+			<name>FatFS</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/FatFs</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/FatFS</locationURI>
 		</link>
 		<link>
 			<name>app</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/app</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/app</locationURI>
 		</link>
 		<link>
 			<name>brtos</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/brtos</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/brtos</locationURI>
 		</link>
 		<link>
 			<name>contiki</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/contiki</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/contiki</locationURI>
 		</link>
 		<link>
 			<name>devices</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/devices</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/devices</locationURI>
 		</link>
 		<link>
 			<name>libs</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/libs</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/libs</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

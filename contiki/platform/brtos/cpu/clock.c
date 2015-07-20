@@ -55,7 +55,7 @@ clock_time(void)
 unsigned long
 clock_seconds(void)
 {
-  return (clock_time_t)(clock / configTICK_RATE_HZ);
+  return (unsigned long)(clock_time_t)(clock / configTICK_RATE_HZ);
 }
 /*-----------------------------------------------------------------------------------*/
 
@@ -64,6 +64,7 @@ void clock_delay(unsigned int delay)
 
 }
 
+/* BRTOS Timer Hook is used to implement Contiki's clock */
 void BRTOS_TimerHook(void)
 {
 	clock++;

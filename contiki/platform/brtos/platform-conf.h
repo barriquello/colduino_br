@@ -41,11 +41,6 @@
 
 #include "BRTOS.h"
 
-#define PLATFORM  PROCESSOR
-
-#if PLATFORM == COLDFIRE_V1
-
-#endif
-
+#define BRTOS_CPU  PROCESSOR
 
 #endif /* PLATFORM_CONF_H_ */

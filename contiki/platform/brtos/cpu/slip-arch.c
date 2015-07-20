@@ -29,7 +29,6 @@
  */
 
 #include "dev/slip.h"
-
 #include "virtual_com.h"
 
 void
@@ -37,12 +36,11 @@ slip_arch_init(unsigned long ubr)
 {	
    
 	(void)ubr;
-#if PROCESSOR == COLDFIRE_V1	
+#if BRTOS_CPU == COLDFIRE_V1	
     (void)CDC_Init(); /* Initialize the USB CDC Application */
-#elif  PROCESSOR == ARM_Cortex_M0 
-	USB_Init();
-	/* Initialize the USB CDC Application */
-	(void)cdc_Init();
+#elif  BRTOS_CPU == ARM_Cortex_M0 
+	USB_Init();	
+	(void)cdc_Init(); /* Initialize the USB CDC Application */
 #endif    	    
 }
 

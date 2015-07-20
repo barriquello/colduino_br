@@ -3,6 +3,8 @@
 
 #include "BRTOS.h"
 
+#include "platform-conf.h"
+
 //#define CC_CONF_REGISTER_ARGS 1
 #define CC_CONF_FASTCALL
 #define CC_CONF_INLINE   __inline
@@ -85,9 +87,9 @@ typedef unsigned short uip_stats_t;
 #define UIP_CONF_MAX_LISTENPORTS      2
 #define UIP_CONF_MAX_CONNECTIONS      1
 
-#if PROCESSOR == COLDFIRE_V1		
+#if BRTOS_CPU == COLDFIRE_V1		
 #define UIP_CONF_BYTE_ORDER           UIP_BIG_ENDIAN
-#elif PROCESSOR == ARM_Cortex_M0	
+#elif BRTOS_CPU == ARM_Cortex_M0	
 #define UIP_CONF_BYTE_ORDER           UIP_LITTLE_ENDIAN
 #endif		
 

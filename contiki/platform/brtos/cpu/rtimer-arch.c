@@ -48,6 +48,7 @@
 #define PRINTF(...)
 #endif
 
+/* real time tasks are supported by BRTOS kernel, and not implemented here */
 
 /*---------------------------------------------------------------------------*/
 void
