@@ -8,6 +8,13 @@
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
 
+/// Define the platform for BRTOS + Contiki 
+#define BOARD_NONE				 	 0
+#define BOARD_COLDUINO				 1
+#define BOARD_FRDM_KL25Z			 2
+
+#define BRTOS_PLATFORM 			BOARD_FRDM_KL25Z
+
 /// Define MCU endianess
 #define BRTOS_ENDIAN			BRTOS_LITTLE_ENDIAN
 

@@ -45,6 +45,12 @@ typedef INT32S  s32_t;
 
 typedef uint16_t 	uip_stats_t;
 
+#if BRTOS_ENDIAN == BRTOS_BIG_ENDIAN		
+#define UIP_CONF_BYTE_ORDER           UIP_BIG_ENDIAN
+#elif BRTOS_ENDIAN == BRTOS_LITTLE_ENDIAN	
+#define UIP_CONF_BYTE_ORDER           UIP_LITTLE_ENDIAN
+#endif	
+
 #ifndef NETSTACK_CONF_WITH_IPV6
 #define NETSTACK_CONF_WITH_IPV6		  1
 #endif
@@ -101,12 +107,6 @@ typedef uint16_t 	uip_stats_t;
 #ifndef UIP_CONF_IPV6_RPL
 #define UIP_CONF_IPV6_RPL				0
 #endif
-
-#if BRTOS_ENDIAN == BRTOS_BIG_ENDIAN		
-#define UIP_CONF_BYTE_ORDER           UIP_BIG_ENDIAN
-#elif BRTOS_ENDIAN == BRTOS_LITTLE_ENDIAN	
-#define UIP_CONF_BYTE_ORDER           UIP_LITTLE_ENDIAN
-#endif	
 
 #if BRTOS_PLATFORM == BOARD_NONE
 #define UIP_CONF_BUFFER_SIZE          1514 //1280

@@ -89,8 +89,6 @@
       <Path>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\examples\rpl-border-router\</Path>
       <Path>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\brtos\</Path>
       <Path>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\brtos\cpu\</Path>
-      <Path>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\</Path>
-      <Path>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\</Path>
       <Path>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\devices\</Path>
       <Path>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\libs\</Path>
     </SourceCodePaths>
@@ -343,14 +341,6 @@
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\brtos\cpu\slip-arch.c</PathName>
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\brtos\cpu\watchdog.c</PathName>
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\brtos\cpu\xmem.c</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\clock.c</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\leds-arch.c</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\mtarch.c</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\rtimer-arch.c</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\slip-arch.c</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\watchdog.c</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\xmem.c</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-main.c</PathName>
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\devices\SD.c</PathName>
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\devices\Timer_RTC_DS1307.c</PathName>
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\devices\eeprom.c</PathName>
@@ -660,12 +650,6 @@
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\brtos\cpu\mtarch.h</PathName>
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\brtos\cpu\rtimer-arch.h</PathName>
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\brtos\platform-conf.h</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-conf.h</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\cfs-coffee-arch.h</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\mtarch.h</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\contiki-cpu\rtimer-arch.h</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\ip64-conf-old.h</PathName>
-      <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\contiki\platform\kl25z\platform-conf.h</PathName>
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\devices\SD.h</PathName>
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\devices\Timer_RTC_DS1307.h</PathName>
       <PathName>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\devices\eeprom.h</PathName>

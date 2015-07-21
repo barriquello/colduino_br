@@ -8,6 +8,13 @@
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
 
+/// Define the platform for BRTOS + Contiki 
+#define BOARD_NONE				 	 0
+#define BOARD_COLDUINO				 1
+#define BOARD_FRDM_KL25Z			 2
+
+#define BRTOS_PLATFORM 			BOARD_COLDUINO
+
 /// Define the endianess of the microcontroller
 #define PSP_ENDIAN			BRTOS_BIG_ENDIAN
 

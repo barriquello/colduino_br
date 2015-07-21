@@ -41,13 +41,15 @@
 
 #include "BRTOS.h"
 
-#define BOARD_NONE				 	 0
-#define BOARD_COLDUINO				 1
-#define BOARD_FRDM_KL25Z			 2
-
 #define BRTOS_CPU  					 PROCESSOR
-//#define BRTOS_PLATFORM 				 BOARD_NONE
-#define BRTOS_PLATFORM 				 BOARD_FRDM_KL25Z
+
+
+#ifndef BRTOS_PLATFORM
+#ifndef BOARD_NONE
+#define BOARD_NONE				 	 0
+#endif
+#define BRTOS_PLATFORM BOARD_NONE
+#endif
 
 #if BRTOS_PLATFORM == BOARD_COLDUINO
 #include "board-colduino-conf.h"
