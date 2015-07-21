@@ -280,6 +280,7 @@
 									<listOptionValue builtIn="false" value="../../../contiki/examples/rpl-border-router"/>
 									<listOptionValue builtIn="false" value="../../../FatFs"/>
 									<listOptionValue builtIn="false" value="../../../libs"/>
+									<listOptionValue builtIn="false" value="../../../contiki/platform/brtos/boards"/>
 								</option>
 								<option id="com.freescale.coldfire.toolchain.compiler.base.optionCategory.processor.sdata.456667483" name="Use .sdata/.sbiss for (byte in integer between -1..32K)" superClass="com.freescale.coldfire.toolchain.compiler.base.optionCategory.processor.sdata" value="0" valueType="string"/>
 								<option id="com.freescale.coldfire.toolchain.compiler.base.input.include.system.1788546878" name="System Path (-I- -I)" superClass="com.freescale.coldfire.toolchain.compiler.base.input.include.system"/>
@@ -319,7 +320,7 @@
 						<entry excluding="option" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FatFS"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="app"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="brtos"/>
-						<entry excluding="core/net/ipv6/sicslowpan.c|apps/webserver|core/cfs/cfs-xmem.c|core/cfs/cfs-ram.c|core/cfs/cfs-posix-dir.c|core/cfs/cfs-posix.c|core/cfs/cfs-eeprom.c|core/ctk|core/loader|core/net/http-socket|core/net/ipv4|core/net/ip64|core/net/llsec/noncoresec" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="contiki"/>
+						<entry excluding="platform/kl25z|core/net/ipv6/sicslowpan.c|apps/webserver|core/cfs/cfs-xmem.c|core/cfs/cfs-ram.c|core/cfs/cfs-posix-dir.c|core/cfs/cfs-posix.c|core/cfs/cfs-eeprom.c|core/ctk|core/loader|core/net/http-socket|core/net/ipv4|core/net/ip64|core/net/llsec/noncoresec" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="contiki"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="devices"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="libs"/>
 					</sourceEntries>

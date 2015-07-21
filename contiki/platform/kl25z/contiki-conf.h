@@ -49,9 +49,6 @@ typedef unsigned short uip_stats_t;
 
 #define NETSTACK_CONF_WITH_IPV6		  1
 
-#define UIP_CONF_UDP                  0
-#define UIP_CONF_TCP                  1
-
 #define LINKADDR_CONF_SIZE              8
 
 #define UIP_CONF_LL_802154              1

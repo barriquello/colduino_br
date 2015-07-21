@@ -41,6 +41,18 @@
 
 #include "BRTOS.h"
 
-#define BRTOS_CPU  PROCESSOR
+#define BOARD_NONE				 	 0
+#define BOARD_COLDUINO				 1
+#define BOARD_FRDM_KL25Z			 2
+
+#define BRTOS_CPU  					 PROCESSOR
+//#define BRTOS_PLATFORM 				 BOARD_NONE
+#define BRTOS_PLATFORM 				 BOARD_COLDUINO
+
+#if BRTOS_PLATFORM == BOARD_COLDUINO
+#include "board-colduino-conf.h"
+#elif BRTOS_PLATFORM == BOARD_FRDM_KL25Z
+#include "board-frdm-kl25z-conf.h"
+#endif
 
 #endif /* PLATFORM_CONF_H_ */
