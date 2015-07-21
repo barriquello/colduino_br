@@ -79,7 +79,7 @@ void cdc_Init(void)
    };
 
 	// Cria uma fila de recepcao para a porta serial
-	if (OSQueueCreate(&USBRXBuffer,DATA_BUFF_SIZE, &USB) != ALLOC_EVENT_OK)
+	if (OSQueueCreate(&USBRXBuffer,USB_RX_BUFF_SIZE, &USB) != ALLOC_EVENT_OK)
 	{
 		// Oh Oh
 		// N�o deveria entrar aqui !!!
@@ -163,10 +163,13 @@ unsigned char cdc_putch(char c)
   if (g_send_size < sizeof(g_curr_send_buf))
   {
 	g_curr_send_buf[g_send_size++]=(unsigned char)c;
+	
+#if 0	
     if ((c == '\r') || (c == '>'))
     {
       cdc_process();
     }
+#endif    
   }
   else
   {

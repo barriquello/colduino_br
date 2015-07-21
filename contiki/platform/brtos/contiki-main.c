@@ -82,10 +82,12 @@ void print_lladdrs(void) ;
 PROCINIT(&tcpip_process);
 
 /* hack for "rand", because "rand" does not work in CFv1 */
+#if BRTOS_CPU == COLDFIRE_V1 
 int rand(void)
 {
 	return 1;
 }
+#endif
 
 
 //#include "webserver-nogui.h"

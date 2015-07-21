@@ -1,7 +1,7 @@
 <GenerationInfo_G_C>
   <Options>
     <ProjectName>frdm-kl25z</ProjectName>
-    <ProjectDirectory>C:\DADOS_LOCAIS\GITHUB\colduino_br\frdm-kl25z\</ProjectDirectory>
+    <ProjectDirectory>C:\DADOS_LOCAIS\GITHUB\colduino_br\boards\frdm-kl25z\</ProjectDirectory>
     <ProjectMainModuleName>main</ProjectMainModuleName>
     <DestEventsDirectory>Sources\</DestEventsDirectory>
     <DestDriversSubDirectory>..\Generated_Code\</DestDriversSubDirectory>

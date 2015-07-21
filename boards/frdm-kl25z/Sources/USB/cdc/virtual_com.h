@@ -42,7 +42,7 @@
    supported is 16 Bytes
 */
 #ifndef _MC9S08JS16_H
-#define  DATA_BUFF_SIZE     (64+1)
+#define  DATA_BUFF_SIZE     (64)
 #else
 #define  DATA_BUFF_SIZE     (16)
 #endif
@@ -52,6 +52,8 @@
  *****************************************************************************/
 // Declara um ponteiro para o bloco de controle da Porta Serial
 extern BRTOS_Queue *USB;
+
+#define USB_RX_BUFF_SIZE		(256)
 
 /*****************************************************************************
  * Global Functions

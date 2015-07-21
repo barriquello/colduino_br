@@ -22,7 +22,7 @@
 
 #define NETSTACK_CONF_WITH_RIME		  1
 
-#define UIP_CONF_BUFFER_SIZE          1514 //1280
+#define UIP_CONF_BUFFER_SIZE          1280
 #define UIP_CONF_TCP_SPLIT            0
 #define UIP_CONF_LOGGING              1
 #define UIP_CONF_IP_FORWARD           0
@@ -46,8 +46,8 @@
 #endif /* NETSTACK_CONF_WITH_IPV6 */
 
 #define MMEM_CONF_SIZE			   		256
-//#define IP64_ADDRMAP_CONF_ENTRIES  	8
-//#define PROCESS_CONF_NUMEVENTS	   	10
+#define IP64_ADDRMAP_CONF_ENTRIES  	8
+#define PROCESS_CONF_NUMEVENTS	   	10
 
 #define RESOLV_CONF_SUPPORTS_MDNS              0
 #define RESOLV_CONF_SUPPORTS_RECORD_EXPIRATION 0
